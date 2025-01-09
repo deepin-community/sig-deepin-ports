@@ -1,0 +1,54 @@
+[
+  {
+    "title": "甲辰计划",
+    "subtitle": "RISC-V 实习生计划",
+    "text": "加入 deepin-ports，为 RISC-V 架构的 deepin 贡献力量",
+    "icon": "mdi-briefcase-account",
+    "actions": [
+      {
+        "text": "了解更多",
+        "type": "external",
+        "target": "https://wiki.deepin.org/zh/06_%E5%85%B3%E4%BA%8EDeepin/Deepin%E6%B4%BB%E5%8A%A8/%E7%94%B2%E8%BE%B0%E8%AE%A1%E5%88%92/intro"
+      }
+    ]
+  },
+  {
+    "title": "博客",
+    "subtitle": "deepin-ports 开发日志",
+    "text": "了解 deepin-ports 的最新动态",
+    "icon": "mdi-newspaper",
+    "actions": [
+      {
+        "text": "查看博客",
+        "type": "internal",
+        "target": "/blog"
+      }
+    ]
+  },
+  {
+    "title": "项目列表",
+    "subtitle": "deepin-ports 的所有项目",
+    "text": "一键导航，不用翻箱倒柜",
+    "icon": "mdi-source-branch",
+    "actions": [
+      {
+        "text": "查看列表",
+        "type": "internal",
+        "target": "/projects"
+      }
+    ]
+  },
+  {
+    "title": "关于 SIG",
+    "subtitle": "deepin-ports 的介绍",
+    "text": "如果您没有听说过 deepin-ports，可以从这里开始",
+    "icon": "mdi-information",
+    "actions": [
+      {
+        "text": "查看关于",
+        "type": "external",
+        "target": "https://www.deepin.org/index/zh/docs/sig/sig/deepin-ports/README"
+      }
+    ]
+  }
+]

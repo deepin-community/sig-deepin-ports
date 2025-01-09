@@ -1,0 +1,27 @@
+[
+  {
+    "title": "deepin RISC-V 内核构建仓库",
+    "repo": "deepin-riscv-kernel",
+    "description": "存放 deepin RISC-V 内核/U-Boot 构建脚本、patch、配置和 GitHub 工作流"
+  },
+  {
+    "title": "deepin 主线内核（滚动）",
+    "repo": "kernel-rolling",
+    "description": "全架构共享的 deepin 内核源码仓库"
+  },
+  {
+    "title": "deepin 主线内核（LTS）",
+    "repo": "kernel",
+    "description": "全架构共享的 deepin 内核源码仓库"
+  },
+  {
+    "title": "deepin-ports 镜像构建脚本",
+    "repo": "YukariChiba/deepin-ports-image",
+    "description": "构建 deepin-ports，尤其是 RISC-V 架构镜像的脚本"
+  },
+  {
+    "title": "deepin-ports SIG (本站)",
+    "repo": "sig-deepin-ports",
+    "description": "前端代码和文档内容"
+  }
+]

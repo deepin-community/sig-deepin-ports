@@ -1,0 +1,53 @@
+[
+  {
+    "title": "主页",
+    "type": "internal",
+    "target": "/"
+  },
+  {
+    "title": "镜像发布",
+    "type": "group",
+    "target": [
+      {
+        "title": "RISC-V",
+        "type": "subtitle"
+      },
+      {
+        "title": "RISC-V 镜像",
+        "type": "internal",
+        "target": "/images/riscv/download"
+      },
+      {
+        "title": "RISC-V 安装文档",
+        "type": "internal",
+        "target": "/images/riscv/install"
+      }
+    ]
+  },
+  {
+    "title": "社区",
+    "type": "group",
+    "target": [
+      {
+        "title": "甲辰计划",
+        "type": "external",
+        "target": "https://wiki.deepin.org/zh/06_%E5%85%B3%E4%BA%8EDeepin/Deepin%E6%B4%BB%E5%8A%A8/%E7%94%B2%E8%BE%B0%E8%AE%A1%E5%88%92/intro"
+      }
+    ]
+  },
+  {
+    "title": "博客",
+    "type": "internal",
+    "target": "/blog"
+  },
+  {
+    "title": "项目列表",
+    "type": "internal",
+    "target": "/projects"
+  },
+  {
+    "title": "关于",
+    "type": "external",
+    "target": "https://www.deepin.org/index/zh/docs/sig/sig/deepin-ports/README"
+  }
+]
