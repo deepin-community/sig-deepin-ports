@@ -20,6 +20,11 @@
     "description": "构建 deepin-ports，尤其是 RISC-V 架构镜像的脚本"
   },
   {
+    "title": "deepin-ports 设备配置仓库",
+    "repo": "deepin-ports-profiles",
+    "description": "deepin-ports 的设备支持包，带有设备的部分配置文件和软件包依赖"
+  },
+  {
     "title": "deepin-ports SIG (本站)",
     "repo": "sig-deepin-ports",
     "description": "前端代码和文档内容"
