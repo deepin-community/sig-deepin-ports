@@ -38,5 +38,10 @@
     "title": "RISC-V IMG GPU 固件",
     "repo": "img-gpu-bin",
     "description": "部分设备的 Imagination GPU 固件和闭源驱动"
+  },
+  {
+    "title": "RISC-V ffmpeg",
+    "repo": "ffmpeg",
+    "description": "部分设备的 ffmpeg 适配版本（在 ports/ffmpeg-* 分支）"
   }
 ]
