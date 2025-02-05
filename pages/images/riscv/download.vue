@@ -85,12 +85,28 @@
         <template #item.data-table-group="{ item }">
           <template v-for="tag in item.tags" :key="tag">
             <v-chip
-              v-if="Object.keys(imagelabels).includes(tag)"
-              :color="imagelabels[tag].color"
-              >{{ imagelabels[tag].title }}</v-chip
+              v-if="Object.keys(imagelabels.types).includes(item.type)"
+              :color="imagelabels.types[item.type].color"
+            >
+              {{ imagelabels.types[item.type].title }}
+            </v-chip>
+            <v-chip
+              v-if="Object.keys(imagelabels.tags).includes(tag)"
+              :color="imagelabels.tags[tag].color"
+              >{{ imagelabels.tags[tag].title }}</v-chip
             >
             <v-chip v-else>{{ tag }}</v-chip>
           </template>
+        </template>
+        <template #item.type="{ item }">
+          <v-chip
+            v-if="Object.keys(imagelabels.types).includes(item.type)"
+            :color="imagelabels.types[item.type].color"
+            density="compact"
+          >
+            {{ imagelabels.types[item.type].title }}
+          </v-chip>
+          <v-chip v-else>{{ item.type }}</v-chip>
         </template>
         <template #item.size="{ item }">
           {{ (item.size / 1024 / 1024 / 1024).toFixed(2) }} GB
