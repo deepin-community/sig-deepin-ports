@@ -20,7 +20,11 @@
               ? project.repo
               : 'deepin-community/' + project.repo)
           "
-        />
+        >
+          <v-card-text>
+            {{ project.description }}
+          </v-card-text>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>

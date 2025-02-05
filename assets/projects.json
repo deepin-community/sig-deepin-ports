@@ -28,5 +28,15 @@
     "title": "deepin-ports SIG (本站)",
     "repo": "sig-deepin-ports",
     "description": "前端代码和文档内容"
+  },
+  {
+    "title": "RISC-V IMG GPU mesa",
+    "repo": "mesa",
+    "description": "部分设备的 Imagination GPU mesa 驱动（在 ports/pvr-ddk* 分支）"
+  },
+  {
+    "title": "RISC-V IMG GPU 固件",
+    "repo": "img-gpu-bin",
+    "description": "部分设备的 Imagination GPU 固件和闭源驱动"
   }
 ]
