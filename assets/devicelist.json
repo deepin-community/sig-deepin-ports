@@ -11,7 +11,7 @@
   "romadc": { "desc": "DC ROMA" },
   "rvbook": { "desc": "RuyiBook" },
   "rvbook-zhihe": { "desc": "RuyiBook (Zhihe 款)", "modified": true },
-  "sg2042": { "desc": "SG2042" },
+  "sg2042": { "desc": "Sophgo SG2042" },
   "th1520": { "desc": "T-Head TH1520" },
   "visionfive2": { "desc": "StarFive VisionFive2", "replacedby": "jh7110" }
 }

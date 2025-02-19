@@ -6,7 +6,9 @@ meta_device_desc: 也兼容其它（假如存在）的主线内核 + UEFI平台
 meta_device_img: images/devices/qemu.svg
 ---
 
-> 请在 Linux 平台上启动，否则 virtio-gpu 可能无法正常工作导致无法进入图形界面。
+## 支持设备
+
+- QEMU 虚拟机
 
 ## 下载 ISO 镜像
 
@@ -64,3 +66,4 @@ qemu-system-riscv64 \
 
 - `virtio-vga-gl` 为参考值，亦可选择 `virtio-gpu-gl`，部分硬件会导致启动卡在 openSBI
 - 启动需要大约 3-5 分钟，如需查看串口，请切换到 serial 并在 grub 界面，将 `console=tty` 改为 `console=ttyS0` 即可
+- 请在 Linux 平台上启动，否则 virtio-gpu 可能无法正常工作导致无法进入图形界面
