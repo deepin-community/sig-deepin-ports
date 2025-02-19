@@ -25,7 +25,7 @@
       <v-data-table
         :headers="headers"
         :items="items"
-        :items-per-page="30"
+        :items-per-page="-1"
         :group-by="groupby"
         :sort-by="sortby"
         :loading="loading"
