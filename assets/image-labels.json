@@ -13,6 +13,10 @@
     "25-beige-preview": {
       "title": "25 预览版 (仅供测试，更不稳定)",
       "color": "warning"
+    },
+    "25-crimson-preview": {
+      "title": "25 预览版",
+      "color": "success"
     }
   }
 }
