@@ -10,6 +10,11 @@
     "target": "/images"
   },
   {
+    "title": "文档列表",
+    "type": "internal",
+    "target": "/docs"
+  },
+  {
     "title": "支持矩阵",
     "type": "internal",
     "target": "/matrix"

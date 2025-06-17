@@ -174,14 +174,17 @@ import devicelist from "~/assets/devicelist.json";
 import { ref } from "vue";
 
 const testdocs = (
-    await useAsyncData("docs-test", async () =>
-        await queryContent("docs", "test").sort({ _id: -1 }).find(),
+    await useAsyncData(
+        "docs-test",
+        async () => await queryContent("docs", "test").sort({ _id: -1 }).find(),
     )
 ).data;
 
 const installdocs = (
-    await useAsyncData("docs-install",async () =>
-        await queryContent("docs", "install").sort({ _id: -1 }).find(),
+    await useAsyncData(
+        "docs-install",
+        async () =>
+            await queryContent("docs", "install").sort({ _id: -1 }).find(),
     )
 ).data;
 

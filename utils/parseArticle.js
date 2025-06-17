@@ -10,7 +10,7 @@ export default function (articles) {
       articles.date ||
       articles.gitUpdatedAt ||
       articles.gitCreatedAt ||
-      "not-date-available",
+      0,
     date_created: articles.gitCreatedAt || "not-date-available",
     tags: articles.tags || [],
     author: articles.author || "deepin-ports SIG",

@@ -5,8 +5,8 @@ definePageMeta({ title: "文档" });
 const { params } = useRoute();
 
 const { data: articles, error } = await useAsyncData(
-    `docs-${params.path}`,
-    () => queryContent("/docs/", params.path.join("/")).findOne(),
+    `docs-${params.topic}-${params.doc}`,
+    () => queryContent("docs", params.topic, params.doc).findOne(),
 );
 
 if (error.value)

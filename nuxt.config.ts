@@ -34,19 +34,19 @@ export default defineNuxtConfig({
         createdAtName: "gitCreatedAt",
         updatedAtName: "gitUpdatedAt",
       },
-    ]
+    ],
   ],
 
   runtimeConfig: {
     public: {
-      siteUrl: process.env.PUBLIC_WEB_URL ||
-      "https://deepin-community.github.io/sig-deepin-ports",
+      siteUrl:
+        process.env.PUBLIC_WEB_URL ||
+        "https://deepin-community.github.io/sig-deepin-ports",
     },
   },
 
   site: {
-    url: process.env.PUBLIC_WEB_URL ||
-    "https://deepin-community.github.io",
+    url: process.env.PUBLIC_WEB_URL || "https://deepin-community.github.io",
     name: "deepin-ports SIG",
   },
 
