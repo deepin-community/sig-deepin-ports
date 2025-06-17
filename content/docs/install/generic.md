@@ -1,9 +1,6 @@
 ---
-title: QEMU 安装指南
+title: 通用设备 / QEMU 安装指南
 date: 2025-01-09
-meta_device: QEMU
-meta_device_desc: 也兼容其它（假如存在）的主线内核 + UEFI平台
-meta_device_img: images/devices/qemu.svg
 ---
 
 ## 支持设备

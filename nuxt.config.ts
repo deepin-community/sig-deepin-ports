@@ -1,20 +1,19 @@
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
-const publicWebUrl =
-  process.env.PUBLIC_WEB_URL ||
-  "https://deepin-community.github.io/sig-deepin-ports/";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   build: {
     transpile: ["vuetify"],
   },
+
   nitro: {
     prerender: {
       autoSubfolderIndex: false,
     },
   },
+
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
@@ -35,17 +34,22 @@ export default defineNuxtConfig({
         createdAtName: "gitCreatedAt",
         updatedAtName: "gitUpdatedAt",
       },
-    ],
+    ]
   ],
+
   runtimeConfig: {
     public: {
-      siteUrl: publicWebUrl,
+      siteUrl: process.env.PUBLIC_WEB_URL ||
+      "https://deepin-community.github.io/sig-deepin-ports",
     },
   },
+
   site: {
-    url: publicWebUrl,
+    url: process.env.PUBLIC_WEB_URL ||
+    "https://deepin-community.github.io",
     name: "deepin-ports SIG",
   },
+
   vite: {
     vue: {
       template: {
@@ -53,13 +57,16 @@ export default defineNuxtConfig({
       },
     },
   },
+
   pages: true,
   css: ["@mdi/font/css/materialdesignicons.min.css"],
+
   googleFonts: {
     families: {
       Roboto: [100, 300, 400, 500, 700, 900],
     },
   },
+
   app: {
     baseURL: "/sig-deepin-ports/",
     head: {
@@ -76,6 +83,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   schemaOrg: {
     identity: {
       type: "Organization",
@@ -89,4 +97,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  compatibilityDate: "2025-06-05",
 });

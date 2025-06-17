@@ -1,15 +1,15 @@
 <template>
-  <v-fab
-    class="hidden-xs"
-    v-show="showfab"
-    icon="mdi-arrow-up"
-    position="sticky"
-    app
-    appear
-    variant="outlined"
-    @click="scrolltop"
-    v-scroll="onScroll"
-  ></v-fab>
+    <v-fab
+        v-show="showfab"
+        v-scroll="onScroll"
+        class="hidden-xs"
+        icon="mdi-arrow-up"
+        position="sticky"
+        app
+        appear
+        variant="outlined"
+        @click="scrolltop"
+    />
 </template>
 
 <script setup>
@@ -20,9 +20,9 @@ const goTo = useGoTo();
 const showfab = ref(false);
 
 function scrolltop() {
-  goTo(0);
+    goTo(0);
 }
 function onScroll(e) {
-  showfab.value = e.target.scrollingElement.scrollTop > window.innerHeight;
+    showfab.value = e.target.scrollingElement.scrollTop > window.innerHeight;
 }
 </script>

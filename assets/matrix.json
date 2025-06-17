@@ -1,0 +1,181 @@
+[
+  {
+    "core": "SiFive U74",
+    "socs": [
+      {
+        "soc": "SiFive FU740",
+        "n_cores": 4,
+        "deprecated": true,
+        "boot": "u-boot",
+        "devices": [
+          {
+            "device": "HiFive Unmatched"
+          }
+        ]
+      },
+      {
+        "soc": "StarFive JH7100",
+        "n_cores": 2,
+        "deprecated": true,
+        "boot": "u-boot",
+        "devices": [
+          {
+            "device": "VisionFive 1"
+          }
+        ]
+      },
+      {
+        "soc": "StarFive JH7110",
+        "n_cores": 4,
+        "gpu": "Imagination BXE-4-32",
+        "extra": "VPU/JPU 驱动，ffmpeg",
+        "boot": "u-boot",
+        "kernels": ["5.15.y", "6.6.y", "6.12.y"],
+        "devices": [
+          {
+            "device": "VisionFive 2"
+          },
+          {
+            "device": "MilkV Mars"
+          },
+          {
+            "device": "DC ROMA",
+            "standalone": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "core": "SiFive P550",
+    "socs": [
+      {
+        "soc": "ESWIN EIC7700",
+        "n_cores": 4,
+        "gpu": "Imagination AXM-8-256",
+        "extra": "VPU 驱动，ffmpeg",
+        "boot": "u-boot",
+        "kernels": ["6.6.y"],
+        "devices": [
+          {
+            "device": "EIC7700 EVB"
+          },
+          {
+            "device": "HiFive Premier P550"
+          },
+          {
+            "device": "MilkV Megrez"
+          },
+          {
+            "device": "Star Pro 64"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "core": "XuanTie C920",
+    "socs": [
+      {
+        "soc": "SOPHON SG2042",
+        "n_cores": 64,
+        "boot": "linuxboot",
+        "kernels": ["6.6.y", "6.12.y", "6.14.y", "6.15.y"],
+        "devices": [
+          {
+            "device": "SG2042 EVB"
+          },
+          {
+            "device": "MilkV Pioneer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "core": "XuanTie C910",
+    "socs": [
+      {
+        "soc": "TH1520",
+        "n_cores": 4,
+        "gpu": "Imagination BXM-4-64",
+        "extra": "VPU/NPU 驱动，ffmpeg",
+        "boot": "u-boot",
+        "kernels": ["6.6.y"],
+        "devices": [
+          {
+            "device": "T-Head Light-A"
+          },
+          {
+            "device": "LicheePi 4A"
+          },
+          {
+            "device": "RuyiBook",
+            "standalone": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "core": "SpacemiT X60",
+    "socs": [
+      {
+        "soc": "SpacemiT K1",
+        "n_cores": 8,
+        "gpu": "Imagination BXE-2-32 ",
+        "extra": "VPU/JPU 驱动，ffmpeg",
+        "boot": "u-boot",
+        "kernels": ["6.6.y"],
+        "devices": [
+          {
+            "device": "MUSE box"
+          },
+          {
+            "device": "MUSE book"
+          },
+          {
+            "device": "MUSE pi"
+          },
+          {
+            "device": "DC ROMA 2"
+          },
+          {
+            "device": "LicheePi 3A"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "core": "UltraRISC CP100",
+    "socs": [
+      {
+        "soc": "UltraRISC DP1000",
+        "n_cores": 8,
+        "boot": "UEFI",
+        "kernels": ["hwe"],
+        "devices": [
+          {
+            "device": "UltraRISC A1000 EVB"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "core": "QEMU",
+    "socs": [
+      {
+        "soc": "QEMU",
+        "boot": "UEFI",
+        "kernels": ["hwe", "rolling"],
+        "devices": [
+          {
+            "device": "QEMU"
+          }
+        ]
+      }
+    ]
+  }
+]

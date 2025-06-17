@@ -17,6 +17,10 @@
     "25-crimson-preview": {
       "title": "25 预览版",
       "color": "success"
+    },
+    "25-crimson-immutable": {
+      "title": "25 预览版 (磐石)",
+      "color": "success"
     }
   }
 }

@@ -5,35 +5,14 @@
     "target": "/"
   },
   {
-    "title": "镜像发布",
-    "type": "group",
-    "target": [
-      {
-        "title": "RISC-V",
-        "type": "subtitle"
-      },
-      {
-        "title": "RISC-V 镜像",
-        "type": "internal",
-        "target": "/images/riscv/download"
-      },
-      {
-        "title": "RISC-V 安装文档",
-        "type": "internal",
-        "target": "/images/riscv/install"
-      }
-    ]
+    "title": "镜像列表",
+    "type": "internal",
+    "target": "/images"
   },
   {
-    "title": "社区",
-    "type": "group",
-    "target": [
-      {
-        "title": "甲辰计划",
-        "type": "external",
-        "target": "https://wiki.deepin.org/zh/06_%E5%85%B3%E4%BA%8EDeepin/Deepin%E6%B4%BB%E5%8A%A8/%E7%94%B2%E8%BE%B0%E8%AE%A1%E5%88%92/intro"
-      }
-    ]
+    "title": "支持矩阵",
+    "type": "internal",
+    "target": "/matrix"
   },
   {
     "title": "博客",
@@ -44,6 +23,31 @@
     "title": "项目列表",
     "type": "internal",
     "target": "/projects"
+  },
+  {
+    "title": "社区",
+    "type": "group",
+    "target": [
+      {
+        "title": "Matrix 群组",
+        "type": "external",
+        "target": "https://matrix.to/#/#deepin-ports:matrix.org"
+      },
+      {
+        "title": "Telegram 群组",
+        "type": "external",
+        "target": "https://t.me/+gayVJlNnqXNlYzM1"
+      },
+      {
+        "title": "合作社区",
+        "type": "subtitle"
+      },
+      {
+        "title": "甲辰计划",
+        "type": "external",
+        "target": "https://wiki.deepin.org/zh/06_%E5%85%B3%E4%BA%8EDeepin/Deepin%E6%B4%BB%E5%8A%A8/%E7%94%B2%E8%BE%B0%E8%AE%A1%E5%88%92/intro"
+      }
+    ]
   },
   {
     "title": "关于",

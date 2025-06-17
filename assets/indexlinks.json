@@ -2,7 +2,7 @@
   {
     "title": "甲辰计划",
     "subtitle": "RISC-V 实习生计划",
-    "text": "加入 deepin-ports，为 RISC-V 架构的 deepin 贡献力量",
+    "text": "加入甲辰计划，成为 deepin 在 RISC-V 新架构上的开拓者，贡献您的智慧与力量。 ",
     "icon": "mdi-briefcase-account",
     "actions": [
       {
@@ -15,7 +15,7 @@
   {
     "title": "博客",
     "subtitle": "deepin-ports 开发日志",
-    "text": "了解 deepin-ports 的最新动态",
+    "text": "通过博客追踪 deepin-ports 的最新开发进展、技术突破和社区故事，获取第一手资讯。 ",
     "icon": "mdi-newspaper",
     "actions": [
       {
@@ -28,7 +28,7 @@
   {
     "title": "项目列表",
     "subtitle": "deepin-ports 的所有项目",
-    "text": "一键导航，不用翻箱倒柜",
+    "text": "集中展示 deepin-ports 下的所有开源项目和软件包。一键导航，无需翻箱倒柜，轻松找到您关注的内容。",
     "icon": "mdi-source-branch",
     "actions": [
       {
@@ -41,7 +41,7 @@
   {
     "title": "关于 SIG",
     "subtitle": "deepin-ports 的介绍",
-    "text": "如果您没有听说过 deepin-ports，可以从这里开始",
+    "text": "了解 deepin-ports 特别兴趣小组 (SIG) 的目标。如果您对我们的工作感兴趣，不妨从这里开始。",
     "icon": "mdi-information",
     "actions": [
       {

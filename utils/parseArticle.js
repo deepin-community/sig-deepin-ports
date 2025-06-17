@@ -2,7 +2,8 @@ export default function (articles) {
   return {
     path: articles._path,
     title: articles.title || "no-title available",
-    description: articles.description || "no-description available",
+    description:
+      articles.description || articles.title || "no-description available",
     image: articles.image || "/not-found.jpg",
     alt: articles.alt || "no alter data available",
     date:
