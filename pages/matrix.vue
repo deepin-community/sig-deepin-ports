@@ -119,6 +119,7 @@
                                                     :key="device.device"
                                                     :value="device"
                                                     color="primary"
+                                                    :active="false"
                                                 >
                                                     <v-list-item-title>
                                                         {{ device.device }}

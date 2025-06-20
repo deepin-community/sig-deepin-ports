@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 const { data } = await useAsyncData("blogs", () =>
-    queryContent("blog").sort({ _id: -1 }).find(),
+    queryCollection("blogs").order('date', 'DESC').all(),
 );
 
 const elementPerPage = ref(8);
 const pageNumber = ref(1);
 
 const formattedData = computed(() => {
-    return data.value?.map(parseArticle) || [];
+    return data.value || [];
 });
 
 const paginatedData = computed(() => {

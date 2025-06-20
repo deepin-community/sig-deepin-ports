@@ -28,13 +28,6 @@ export default defineNuxtConfig({
     "nuxt-schema-org",
     "nuxt-seo-experiments",
     "nuxt-route-meta",
-    [
-      "nuxt-content-git",
-      {
-        createdAtName: "gitCreatedAt",
-        updatedAtName: "gitUpdatedAt",
-      },
-    ],
   ],
 
   runtimeConfig: {

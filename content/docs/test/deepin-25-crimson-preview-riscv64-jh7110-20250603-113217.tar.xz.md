@@ -1,6 +1,7 @@
 ---
 title: StarFive JH7110 20250603 镜像测试报告
 date: 2025-06-18
+author: apr3vau
 ---
 
 ## 下载镜像
@@ -15,9 +16,9 @@ tar -xvf deepin-25-crimson-preview-riscv64-jh7110-20250603-113217.tar.xz
 
 ``` shell
 # 两者一致即可
-$ cat deepin-jh7110-riscv64-25-desktop-installer.sha256sum 
+$ cat deepin-jh7110-riscv64-25-desktop-installer.sha256sum
 c2653489c88fc40a620f82aab6ee6280edd6622f5ee01e88f0e83242a1e98fc7  deepin-jh7110-riscv64-25-desktop-installer.img
-$ sha256sum deepin-jh7110-riscv64-25-desktop-installer.img 
+$ sha256sum deepin-jh7110-riscv64-25-desktop-installer.img
 c2653489c88fc40a620f82aab6ee6280edd6622f5ee01e88f0e83242a1e98fc7  deepin-jh7110-riscv64-25-desktop-installer.img
 ```
 
