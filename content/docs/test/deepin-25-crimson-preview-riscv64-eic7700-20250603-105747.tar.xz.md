@@ -29,6 +29,8 @@ $ sha256sum deepin-eic7700-riscv64-25-desktop-installer.root.ext4
 
 ## 测试设备：MilkV Megrez
 
+[参考安装文档](https://milkv.io/zh/docs/megrez/getting-started/boot)
+
 ### 硬件准备
 
 - MilkV Megrez
@@ -60,7 +62,7 @@ sudo screen /dev/ttyUSB<编号> 115200
 
 图二：SATA 接口切换器
 
-![Megrez SATA SEL](/sig-deepin-ports/img/docs/test/deepin-25-crimson-preview-riscv64-eic7700-20250603-105747.tar.xz.md/megrez-view.png)
+![Megrez SATA SEL](/sig-deepin-ports/img/docs/test/deepin-25-crimson-preview-riscv64-eic7700-20250603-105747.tar.xz.md/megrez-sata-sel.png)
 
 #### 刷写操作系统至 SD 卡
 
@@ -73,7 +75,7 @@ sudo dd if=deepin-eic7700-riscv64-25-desktop-installer.root.ext4 of=/dev/sdd2 st
 
 成功后，将 SD 卡插入设备的 SD 卡插槽中，如图一标号 1 所示。
 
-#### 刷写操作系统至 SATA M.2 SSD硬盘
+#### 刷写操作系统至 SATA M.2 SSD 硬盘
 
 步骤同上，成功后，将 SATA M.2 SSD 硬盘插入设备的 SATA M.2 接口，如图一标号 2 所示，再将如图二所示的 SATA SEL 开关拨至如图所示的下方。
 
