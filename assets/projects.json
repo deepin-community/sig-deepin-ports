@@ -30,6 +30,11 @@
     "description": "前端代码和文档内容"
   },
   {
+    "title": "deepin-ports 镜像元数据",
+    "repo": "sig-deepin-ports-images",
+    "description": "deepin-ports 仓库中镜像的元数据，方便前端调取"
+  },
+  {
     "title": "RISC-V IMG GPU mesa",
     "repo": "mesa",
     "description": "部分设备的 Imagination GPU mesa 驱动（在 ports/pvr-ddk* 分支）"
