@@ -1,5 +1,6 @@
 <template>
   <v-fab
+    v-if="showtoc == false"
     class="hidden-lg-and-up"
     icon="mdi-list-box-outline"
     position="sticky"
@@ -9,7 +10,7 @@
     variant="outlined"
     @click="showtoc = true"
   />
-  <v-navigation-drawer v-model="showtoc" class="mx-2 hidden-lg-and-up" temporary>
+  <v-navigation-drawer v-model="showtoc" class="hidden-lg-and-up" temporary>
     <v-list-item title="# 目录" />
     <v-list
       density="compact"
@@ -35,6 +36,7 @@ const navto = useGoTo();
 
 const goto = (it) => {
   navto(`#${it.id}`);
+  showtoc.value = false;
 };
 
 const showtoc = ref(false);

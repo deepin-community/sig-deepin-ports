@@ -54,7 +54,7 @@
   </v-app-bar>
   <v-navigation-drawer
     v-model="drawer"
-    class="mx-2 hidden-lg-and-up"
+    class="hidden-lg-and-up"
     location="bottom"
     temporary
   >
