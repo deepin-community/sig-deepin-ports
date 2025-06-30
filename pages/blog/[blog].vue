@@ -6,7 +6,7 @@ definePageMeta({ title: "博客文章" });
 
 const { params } = useRoute();
 
-const { data: articles, error } = await useAsyncData(
+const { data: article, error } = await useAsyncData(
   `blog-post-${params.blog}`,
   () => queryCollection("blogs").path(route.path).first(),
 );
@@ -18,7 +18,7 @@ if (error.value)
     data: error.value.toString(),
   });
 
-const data = articles.value!;
+const data = article.value!;
 
 useSeoMeta({
   title: data.title || "博客文章",
@@ -38,25 +38,7 @@ useSchemaOrg([
 </script>
 
 <template>
-  <v-container class="main-content my-6">
-    <v-card variant="text" color="primary">
-      <div class="d-flex flex-column">
-        <DocTitleCard
-          :title="data.title"
-          :author="data.author"
-          :date="data.date"
-        />
-        <v-divider />
-        <v-card-text class="mt-2">
-          <ContentRenderer
-            v-if="articles"
-            class="mdshow markdown-body"
-            :value="articles"
-          />
-        </v-card-text>
-      </div>
-    </v-card>
-  </v-container>
+  <ArticleRenderer :article="article" />
 </template>
 
 <style lang="scss">

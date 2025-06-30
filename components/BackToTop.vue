@@ -2,7 +2,6 @@
     <v-fab
         v-show="showfab"
         v-scroll="onScroll"
-        class="hidden-xs"
         icon="mdi-arrow-up"
         position="sticky"
         app

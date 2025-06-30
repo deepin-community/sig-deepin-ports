@@ -2,14 +2,14 @@
 const testdocs = (
   await useAsyncData(
     "docs-test",
-    async () => await queryCollection("testdocs").all(),
+    async () => await queryCollection("testdocs").order('date', 'DESC').all(),
   )
 ).data;
 
 const installdocs = (
   await useAsyncData(
     "docs-install",
-    async () => await queryCollection("installdocs").all(),
+    async () => await queryCollection("installdocs").order('date', 'DESC').all(),
   )
 ).data;
 

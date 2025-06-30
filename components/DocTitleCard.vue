@@ -1,7 +1,7 @@
 <template>
   <v-card variant="tonal" class="pa-4 pb-2 mb-2">
     <v-card-title>
-      <div class="text-h4 mb-2">
+      <div class="text-h4 mb-2" style="text-wrap: auto;">
         {{ title }}
       </div>
     </v-card-title>

@@ -89,8 +89,9 @@
                 color="success"
                 class="ml-2"
                 prepend-icon="mdi-file-document-outline"
+                @click.stop="{}"
               >
-                查看文档
+                安装指南
               </v-chip>
             </td>
           </tr>
@@ -100,11 +101,23 @@
             <v-chip
               v-if="Object.keys(imagelabels.tags).includes(tag)"
               density="compact"
+              class="mr-2"
               :color="imagelabels.tags[tag].color"
               >{{ imagelabels.tags[tag].title }}</v-chip
             >
             <v-chip v-else>{{ tag }}</v-chip>
           </template>
+          <v-chip
+            v-if="
+              testdocs
+                .map(({ path }) => path.replace(/^\/docs\/test\//, ''))
+                .includes(item.link.split('/').at(-1))
+            "
+            text="已有测试"
+            class="mr-2"
+            density="compact"
+            color="secondary"
+          />
         </template>
         <template #item.type="{ item }">
           <v-chip

@@ -32,7 +32,7 @@
   {
     "title": "社区",
     "type": "group",
-    "target": [
+    "targets": [
       {
         "title": "Matrix 群组",
         "type": "external",
