@@ -40,6 +40,7 @@ definePageMeta({ title: "博客" });
     <title-card title="博客" subtitle="最新博客文章" icon="mdi-newspaper" />
     <v-alert
       class="mb-2"
+      rounded="lg"
       closable
       icon="mdi-rss"
       density="compact"

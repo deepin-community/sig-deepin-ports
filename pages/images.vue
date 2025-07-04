@@ -6,6 +6,7 @@
       type="warning"
       variant="tonal"
       class="mb-4"
+      rounded="lg"
     />
     <v-card variant="outlined" color="primary">
       <v-card-actions>
