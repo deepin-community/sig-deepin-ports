@@ -96,7 +96,7 @@ export async function generateFeed(feed: Feed, feedtype: string) {
             name: post.author || "deepin-ports SIG",
           },
         ],
-        content: post.description || "暂无简介",
+        content: post.bodyHtml,
       });
     } catch (error) {
       console.error(`error generating rss feed: `, error);

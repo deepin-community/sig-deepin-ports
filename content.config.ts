@@ -10,6 +10,7 @@ export default defineContentConfig({
         image: z.string(),
         author: z.string(),
         date: z.date(),
+        bodyHtml: z.string(),
       }),
     }),
     installdocs: defineCollection({
@@ -20,6 +21,7 @@ export default defineContentConfig({
         image: z.string(),
         author: z.string(),
         date: z.date(),
+        bodyHtml: z.string(),
       }),
     }),
     testdocs: defineCollection({
@@ -30,6 +32,7 @@ export default defineContentConfig({
         image: z.string(),
         author: z.string(),
         date: z.date(),
+        bodyHtml: z.string(),
       }),
     }),
   },

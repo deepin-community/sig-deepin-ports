@@ -23,6 +23,7 @@
     "github-markdown-css": "^5.8.1",
     "moment": "^2.30.1",
     "nuxt": "^3.17.6",
+    "nuxt-content-body-html": "^4.0.4",
     "nuxt-module-feed": "^1.1.4",
     "nuxt-route-meta": "^5.0.3",
     "nuxt-schema-org": "^5.0.5",

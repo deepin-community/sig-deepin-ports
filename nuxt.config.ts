@@ -22,6 +22,14 @@ export default defineNuxtConfig({
       });
     },
     "@nuxt/content",
+    [
+      "nuxt-content-body-html",
+      {
+        fields: {
+          bodyHtml: {},
+        },
+      },
+    ],
     "nuxt-module-feed",
     "@nuxtjs/google-fonts",
     "@nuxt/eslint",
