@@ -22,6 +22,7 @@ export default defineNuxtConfig({
       });
     },
     "@nuxt/content",
+    "nuxt-module-feed",
     "@nuxtjs/google-fonts",
     "@nuxt/eslint",
     "@nuxtjs/sitemap",
@@ -36,6 +37,26 @@ export default defineNuxtConfig({
         process.env.PUBLIC_WEB_URL ||
         "https://deepin-community.github.io/sig-deepin-ports",
     },
+  },
+
+  feed: {
+    sources: [
+      {
+        path: "/feed.blog.xml",
+        type: "atom1",
+        cacheTime: 60 * 15,
+      },
+      {
+        path: "/feed.installdocs.xml",
+        type: "atom1",
+        cacheTime: 60 * 15,
+      },
+      {
+        path: "/feed.testdocs.xml",
+        type: "atom1",
+        cacheTime: 60 * 15,
+      },
+    ],
   },
 
   site: {

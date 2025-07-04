@@ -6,6 +6,7 @@
     variant="plain"
   >
     <v-list-item title="# 目录" />
+    <v-divider />
     <v-list
       density="compact"
       :items="toc.links"
