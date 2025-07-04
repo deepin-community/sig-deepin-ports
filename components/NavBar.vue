@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar class="px-md-6" :elevation="0">
+  <v-app-bar class="px-md-6" scroll-behavior="elevate hide">
     <v-app-bar-title>
       <v-avatar rounded class="mr-2">
         <v-img src="~/assets/logo.svg" />

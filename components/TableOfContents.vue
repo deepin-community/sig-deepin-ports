@@ -1,8 +1,8 @@
 <template>
   <v-card
     width="100%"
-    style="overflow-y: scroll; position: sticky; top: 112px"
-    height="calc(100vh - 112px)"
+    style="overflow-y: scroll; position: sticky; top: 56px; margin-top: 56px;"
+    height="calc(100vh - 56px)"
     variant="plain"
   >
     <v-list-item title="# 目录" />
