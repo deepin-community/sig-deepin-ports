@@ -103,6 +103,26 @@ export default defineNuxtConfig({
           content: "width=device-width, initial-scale=1, maximum-scale=1",
         },
       ],
+      link: [
+        {
+          rel: "alternate",
+          type: "application/atom+xml",
+          title: "Blog",
+          href: "/feed.blog.xml",
+        },
+        {
+          rel: "alternate",
+          type: "application/atom+xml",
+          title: "Install Docs",
+          href: "/feed.installdocs.xml",
+        },
+        {
+          rel: "alternate",
+          type: "application/atom+xml",
+          title: "Test Reports",
+          href: "/feed.testdocs.xml",
+        },
+      ],
     },
   },
 
