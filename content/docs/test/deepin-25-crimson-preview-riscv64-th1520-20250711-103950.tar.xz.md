@@ -127,6 +127,6 @@ Finished. Total time: 501.144s
 
 ### 结论
 
-**支持等级：5.5 图形化支持**
+**支持等级：7.3 开箱即用的 deepin 环境**
 
 该镜像在 SiPEED LicheePI 4A 上通过测试。
