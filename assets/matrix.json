@@ -68,7 +68,10 @@
           },
           {
             "device": "Star Pro 64"
-          }
+          },
+       	  {
+       	    "device": "EIC7700 SBC"
+       	  }
         ]
       }
     ]
@@ -129,13 +132,16 @@
         "kernels": ["6.6.y"],
         "devices": [
           {
-            "device": "MUSE box"
+            "device": "MUSE Box"
           },
           {
-            "device": "MUSE book"
+            "device": "MUSE Book"
           },
           {
-            "device": "MUSE pi"
+            "device": "MUSE Pi"
+          },
+          {
+            "device": "MUSE Pi Pro"
           },
           {
             "device": "DC ROMA 2"
@@ -158,6 +164,9 @@
         "devices": [
           {
             "device": "UltraRISC A1000 EVB"
+          },
+          {
+            "device": "MilkV Titan"
           }
         ]
       }
