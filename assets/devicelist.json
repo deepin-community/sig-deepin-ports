@@ -15,5 +15,6 @@
   "th1520": { "desc": "T-Head TH1520" },
   "visionfive2": { "desc": "StarFive VisionFive2", "replacedby": "jh7110" },
   "tarball": { "desc": "Tarball" },
-  "dp1000": { "desc": "UltraRISC DP1000", "replacedby": "generic" }
+  "dp1000": { "desc": "UltraRISC DP1000", "replacedby": "generic" },
+  "k1-cloud": { "desc": "Spacemit K1 (Cloud)", "modified": true }
 }
