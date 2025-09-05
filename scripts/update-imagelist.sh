@@ -53,11 +53,13 @@ export -f process process_arg echoout
 tmpdir=$(mktemp -d)
 mkdir -p $tmpdir
 
-(ssh -p 2222 $SSHHOST "bash -c \"cd $IMGPATH && find 20*/riscv64/deepin-*-*-*-riscv64-*.* -type f \( -iname \*.tar.xz -o -iname \*.iso -o -iname \*.tar.gz \) -printf '%p %s\n' \"" | xargs -I @ bash -c "process @") | jq -s '.' > $tmpdir/images.json
+for imgarch in riscv64 arm64; do
+  (ssh -p 2222 $SSHHOST "bash -c \"cd $IMGPATH && find 20*/$imgarch/deepin-*-*-*-$imgarch-*.* -type f \( -iname \*.tar.xz -o -iname \*.iso -o -iname \*.tar.gz \) -printf '%p %s\n' \"" | xargs -I @ bash -c "process @") | jq -s '.' > $tmpdir/images-$imgarch.json
+done
 
 pushd $tmpdir
 git init
-git add images.json
+git add *.json
 git config user.name "deepin-ports Auto Update"
 git config user.email "noreply@deepin.org"
 git commit -m "update images: $(LANG=C date +%c)"
