@@ -6,8 +6,19 @@
   },
   {
     "title": "镜像列表",
-    "type": "internal",
-    "target": "/images"
+    "type": "group",
+    "targets": [
+      {
+        "title": "RISC-V",
+        "type": "internal",
+        "target": "/images/riscv64"
+      },
+      {
+        "title": "ARM",
+        "type": "internal",
+        "target": "/images/arm64"
+      }
+    ]
   },
   {
     "title": "文档列表",
