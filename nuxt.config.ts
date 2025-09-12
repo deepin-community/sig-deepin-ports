@@ -141,7 +141,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/images": { redirect: "/images/riscv64" },
+    "/images": { redirect: "/sig-deepin-ports/images/riscv64" },
   },
 
   compatibilityDate: "2025-06-05",
