@@ -127,10 +127,15 @@ $ fastboot flash root deepin-th1520-riscv64-25-desktop-installer.root.ext4
 
 ### 异常记录
 
+注：部分异常记录来自用户 [lzzhzh](https://ruyisdk.cn/t/topic/1715/2) 的反馈。  
+
 - 执行 `glxinfo`，观察到异常情况：渲染器为 `llvmpipe`，且存在驱动初始化报错信息
 - 执行 `eglgears_x11`，立即报错为"EGLUT: Failed to choose a config"
 - 执行 `vkgears -info`，观察到异常情况：渲染器为 `llvmpipe`
-- 耳机音频输出异常（表现为无声）
+- 耳机音频输出异常（表现为无声）但HDMI声音正常且清晰
+- 蓝牙模块运行异常
+- 电源管理异常，运行时关闭显示器运行一段时间可能出现休眠无法唤醒问题，双网卡灯全灭，只能通过重启开发板解决
+- 无线网卡异常，可能与revyos内核版本有关，更新内核或数次重启开发板后无线网卡工作正常
 
 ### 结论
 
