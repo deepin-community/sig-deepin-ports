@@ -27,8 +27,19 @@
   },
   {
     "title": "支持矩阵",
-    "type": "internal",
-    "target": "/matrix"
+    "type": "group",
+    "targets": [
+      {
+        "title": "RISC-V",
+        "type": "internal",
+        "target": "/matrix/riscv64"
+      },
+      {
+        "title": "ARM",
+        "type": "internal",
+        "target": "/matrix/arm64"
+      }
+    ]
   },
   {
     "title": "博客",

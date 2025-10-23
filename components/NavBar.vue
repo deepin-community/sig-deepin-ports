@@ -16,15 +16,17 @@
       variant="text"
       @click.stop="drawer = !drawer"
     />
-    <div class="hidden-md-and-down" v-for="link in navlinks" :key="link.title">
+    <div v-for="link in navlinks" :key="link.title" class="hidden-md-and-down">
       <v-btn
-        v-if="link.type != 'group'"
+        v-if="link.type != NavType.Group"
         rounded="lg"
         variant="text"
         :active="false"
-        :to="link.type == 'internal' ? link.target : null"
-        :href="link.type == 'external' ? link.target : null"
-        :append-icon="link.type == 'external' ? 'mdi-open-in-new' : undefined"
+        :to="link.type == NavType.Internal ? link.target : undefined"
+        :href="link.type == NavType.External ? link.target : undefined"
+        :append-icon="
+          link.type == NavType.External ? 'mdi-open-in-new' : undefined
+        "
       >
         {{ link.title }}
       </v-btn>
@@ -33,16 +35,18 @@
         <v-menu activator="parent" open-on-hover>
           <v-list :lines="false" density="compact" nav>
             <template v-for="item in link.targets" :key="item.title">
-              <v-list-subheader v-if="item.type == 'subtitle'">{{
+              <v-list-subheader v-if="item.type == NavType.Subtitle">{{
                 item.title
               }}</v-list-subheader>
               <v-list-item
-                v-if="item.type == 'internal' || item.type == 'external'"
-                :to="item.type == 'internal' ? item.target : null"
-                :href="item.type == 'external' ? item.target : null"
+                v-if="
+                  item.type == NavType.Internal || item.type == NavType.External
+                "
+                :to="item.type == NavType.Internal ? item.target : undefined"
+                :href="item.type == NavType.External ? item.target : undefined"
                 :title="item.title"
               >
-                <template v-if="item.type == 'external'" #append>
+                <template v-if="item.type == NavType.External" #append>
                   <v-icon>mdi-open-in-new</v-icon>
                 </template>
               </v-list-item>
@@ -61,27 +65,31 @@
     <v-list>
       <template v-for="link in navlinks" :key="link.title">
         <v-list-item
-          v-if="link.type != 'group'"
+          v-if="link.type != NavType.Group"
           :title="link.title"
-          :to="link.type == 'internal' ? link.target : null"
-          :href="link.type == 'external' ? link.target : null"
-          :append-icon="link.type == 'external' ? 'mdi-open-in-new' : undefined"
+          :to="link.type == NavType.Internal ? link.target : undefined"
+          :href="link.type == NavType.External ? link.target : undefined"
+          :append-icon="
+            link.type == NavType.External ? 'mdi-open-in-new' : undefined
+          "
         />
         <v-list-group v-else>
           <template #activator="{ props }">
             <v-list-item v-bind="props" :title="link.title" />
           </template>
           <template v-for="item in link.targets" :key="item.title">
-            <v-list-subheader v-if="item.type == 'subtitle'">{{
+            <v-list-subheader v-if="item.type == NavType.Subtitle">{{
               item.title
             }}</v-list-subheader>
             <v-list-item
-              v-if="item.type == 'internal' || item.type == 'external'"
-              :to="item.type == 'internal' ? item.target : null"
-              :href="item.type == 'external' ? item.target : null"
+              v-if="
+                item.type == NavType.Internal || item.type == NavType.External
+              "
+              :to="item.type == NavType.Internal ? item.target : undefined"
+              :href="item.type == NavType.External ? item.target : undefined"
               :title="item.title"
             >
-              <template v-if="item.type == 'external'" #append>
+              <template v-if="item.type == NavType.External" #append>
                 <v-icon>mdi-open-in-new</v-icon>
               </template>
             </v-list-item>
@@ -93,7 +101,11 @@
 </template>
 
 <script setup lang="ts">
-import navlinks from "~/assets/navlinks.json";
+import navlinks_json from "~/assets/navlinks.json";
+import type { Nav } from "~/types/nav";
+import { NavType } from "~/types/nav";
+
+const navlinks: Nav = navlinks_json;
 
 const route = useRoute();
 
