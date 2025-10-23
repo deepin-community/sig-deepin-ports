@@ -19,26 +19,24 @@
             架构，拓展无限可能。
           </p>
           <div class="mt-8">
-            <v-btn
-              variant="tonal"
-              color="primary"
-              size="large"
-              class="my-1 mx-2"
-              to="/images"
-              prepend-icon="mdi-download-outline"
-            >
-              下载 RISC-V 镜像
-            </v-btn>
-            <v-btn
-              variant="tonal"
-              color="primary"
-              size="large"
-              class="my-1 mx-2"
-              href="https://deepin.org/download"
-              prepend-icon="mdi-open-in-new"
-            >
-              下载其它架构镜像
-            </v-btn>
+            <v-btn-group variant="tonal" class="my-1 mx-2" divided>
+              <v-btn
+                color="primary"
+                size="large"
+                to="/images/arm64"
+                prepend-icon="mdi-download-outline"
+              >
+                ARM 镜像
+              </v-btn>
+              <v-btn
+                color="primary"
+                size="large"
+                to="/images/riscv64"
+                prepend-icon="mdi-download-outline"
+              >
+                RISC-V 镜像
+              </v-btn>
+            </v-btn-group>
             <v-btn
               variant="tonal"
               color="secondary"
@@ -49,10 +47,21 @@
             >
               设备支持矩阵
             </v-btn>
+            <br />
             <v-btn
-              variant="tonal"
+              variant="text"
+              class="my-1 mx-2"
               color="secondary"
-              size="large"
+              size="small"
+              href="https://deepin.org/download"
+              prepend-icon="mdi-open-in-new"
+            >
+              下载其它架构镜像
+            </v-btn>
+            <v-btn
+              variant="text"
+              color="secondary"
+              size="small"
               class="my-1 mx-2"
               href="https://deepin.org"
               prepend-icon="mdi-open-in-new"
