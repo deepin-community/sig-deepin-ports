@@ -22,7 +22,7 @@
   "arm64": {
     "phytiumpi": { "desc": "Phytium Pi" },
     "q6a": { "desc": "Radxa Dragon Q6A" },
-    "a7z": { "desc": "Radxa Cubie Q6A" },
+    "a7z": { "desc": "Radxa Cubie A7Z" },
     "rockchip": { "desc": "Rockchip 通用镜像" }
   }
 }
