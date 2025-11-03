@@ -10,8 +10,8 @@ enum NavType {
 type NavItem = {
   title: string;
   type: NavType;
-  target?: string | undefined;
-  targets?: NavItem[] | undefined;
+  target?: string;
+  targets?: NavItem[];
 };
 
 export { NavType };

@@ -9,18 +9,18 @@ type MatrixCore = {
 
 type MatrixSoC = {
   soc: string;
-  n_cores?: number | undefined;
-  deprecated?: boolean | undefined;
-  boot?: string | undefined;
+  n_cores?: number;
+  deprecated?: boolean;
+  boot?: string;
   devices: MatrixDevice[];
-  kernels?: string[] | undefined;
-  gpu?: string | undefined;
-  extra?: string | undefined;
+  kernels?: string[];
+  gpu?: string;
+  extra?: string;
 };
 
 type MatrixDevice = {
   device: string;
-  standalone?: boolean | undefined;
+  standalone?: boolean;
 };
 
 export type { Matrix };

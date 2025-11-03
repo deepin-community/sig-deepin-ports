@@ -15,7 +15,7 @@
       />
     </v-card-actions>
     <v-data-table
-      :key="show_deprecated + 2 * show_customized"
+      :key="Number(show_deprecated) + 2 * Number(show_customized)"
       :headers="headers"
       :items="items"
       :items-per-page="-1"
@@ -27,8 +27,9 @@
       <template #group-header="{ item, columns, toggleGroup, isGroupOpen }">
         <tr
           v-if="
-            (!devicelist[item.value]?.replacedby || show_deprecated) &&
-            (!devicelist[item.value]?.modified || show_customized)
+            (!devicelist[props.arch][item.value]?.replacedby ||
+              show_deprecated) &&
+            (!devicelist[props.arch][item.value]?.modified || show_customized)
           "
         >
           <td :colspan="columns.length" @click="toggleGroup(item)">
@@ -38,21 +39,21 @@
               variant="text"
             />
             {{
-              Object.keys(devicelist).includes(item.value)
-                ? devicelist[item.value].desc
+              Object.keys(devicelist[props.arch]).includes(item.value)
+                ? devicelist[props.arch][item.value].desc
                 : item.value
             }}
             <v-chip size="small" color="primary" class="ml-2">
               {{ item.items.length }}
             </v-chip>
             <v-chip
-              v-if="devicelist[item.value]?.modified"
+              v-if="devicelist[props.arch][item.value]?.modified"
               size="small"
               class="ml-2"
               >厂商定制</v-chip
             >
             <v-chip
-              v-if="devicelist[item.value]?.replacedby"
+              v-if="devicelist[props.arch][item.value]?.replacedby"
               size="small"
               color="warning"
               class="ml-2"
@@ -61,17 +62,19 @@
               <v-tooltip activator="parent" location="end"
                 >被
                 {{
-                  Object.keys(devicelist).includes(
-                    devicelist[item.value]?.replacedby,
+                  Object.keys(devicelist[props.arch]).includes(
+                    devicelist[props.arch][item.value].replacedby,
                   )
-                    ? devicelist[devicelist[item.value]?.replacedby].desc
-                    : devicelist[item.value]?.replacedby
+                    ? devicelist[props.arch][devicelist[item.value].replacedby]
+                        .desc
+                    : devicelist[props.arch][item.value]?.replacedby
                 }}
                 取代</v-tooltip
               >
             </v-chip>
             <v-chip
               v-if="
+                installdocs &&
                 installdocs
                   .map(({ path }) => path.replace(/^\/docs\/install\//, ''))
                   .includes(item.value)
@@ -88,7 +91,7 @@
           </td>
         </tr>
       </template>
-      <template #item.data-table-group="{ item }">
+      <template #[`item.data-table-group`]="{ item }">
         <template v-for="tag in item.tags" :key="tag">
           <v-chip
             v-if="Object.keys(imagelabels.tags).includes(tag)"
@@ -101,9 +104,10 @@
         </template>
         <v-chip
           v-if="
+            testdocs &&
             testdocs
               .map(({ path }) => path.replace(/^\/docs\/test\//, ''))
-              .includes(item.link.split('/').at(-1))
+              .includes(item.link.split('/').at(-1) || item.link)
           "
           text="已有测试"
           class="mr-2"
@@ -111,7 +115,7 @@
           color="secondary"
         />
       </template>
-      <template #item.type="{ item }">
+      <template #[`item.type`]="{ item }">
         <v-chip
           v-if="Object.keys(imagelabels.types).includes(item.type)"
           :color="imagelabels.types[item.type].color"
@@ -121,10 +125,10 @@
         </v-chip>
         <v-chip v-else>{{ item.type }}</v-chip>
       </template>
-      <template #item.size="{ item }">
-        {{ (item.size / 1024 / 1024 / 1024).toFixed(2) }} GB
+      <template #[`item.size`]="{ item }">
+        {{ (Number(item.size) / 1024 / 1024 / 1024).toFixed(2) }} GB
       </template>
-      <template #item.link="{ item }">
+      <template #[`item.link`]="{ item }">
         <v-btn
           color="primary"
           variant="text"
@@ -136,9 +140,10 @@
         />
         <v-btn
           v-if="
+            testdocs &&
             testdocs
               .map(({ path }) => path.replace(/^\/docs\/test\//, ''))
-              .includes(item.link.split('/').at(-1))
+              .includes(item.link.split('/').at(-1) || item.link)
           "
           :to="`/docs/test/${item.link.split('/').at(-1)}`"
           color="secondary"
@@ -154,8 +159,14 @@
 </template>
 
 <script setup lang="ts">
-import imagelabels from "~/assets/image-labels.json";
-import devicelist from "~/assets/devicelist.json";
+import imagelabels_r from "~/assets/image-labels.json";
+import devicelist_r from "~/assets/devicelist.json";
+import type { DeviceListFull } from "~/types/devicelist";
+import type { SortItem } from "vuetify/lib/components/VDataTable/composables/sort.mjs";
+import type { ImageInfo, ImageLabelList } from "~/types/image";
+
+const devicelist: DeviceListFull = devicelist_r;
+const imagelabels: ImageLabelList = imagelabels_r;
 
 const testdocs = (
   await useAsyncData(
@@ -178,25 +189,21 @@ const headers = [
   { title: "链接", value: "link", sortable: false },
 ];
 
-const groupby = [
+const groupby: SortItem[] = [
   {
     key: "device",
     order: "asc",
   },
 ];
 
-const sortby = ref([{ key: "date", order: "desc" }]);
+const sortby: Ref<SortItem[]> = ref([{ key: "date", order: "desc" }]);
 
 const show_deprecated = ref(false);
 const show_customized = ref(false);
 
-defineProps({
-  loading: {
-    type: Boolean,
-  },
-  items: {
-    type: Array,
-    default: () => [],
-  },
-});
+const props = defineProps<{
+  loading: boolean;
+  items: ImageInfo[];
+  arch: string;
+}>();
 </script>

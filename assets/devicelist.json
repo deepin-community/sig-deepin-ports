@@ -1,24 +1,28 @@
 {
-  "eic7700": { "desc": "ESWIN EIC7700" },
-  "eic7700evb": { "desc": "ESWIN EIC7700 (EVB)", "replacedby": "eic7700" },
-  "generic": { "desc": "通用设备 / QEMU" },
-  "jh7110": { "desc": "StarFive JH7110" },
-  "k1": { "desc": "Spacemit K1" },
-  "lpi4a": { "desc": "LicheePi 4A", "replacedby": "th1520" },
-  "milkv-mars": { "desc": "MilkV Mars", "replacedby": "jh7110" },
-  "musebox": { "desc": "Spacemit MuseBox", "replacedby": "k1" },
-  "p1": { "desc": "Zhihe P1", "modified": true },
-  "romadc": { "desc": "DC ROMA" },
-  "rvbook": { "desc": "RuyiBook" },
-  "rvbook-zhihe": { "desc": "RuyiBook (Zhihe 款)", "modified": true },
-  "sg2042": { "desc": "Sophgo SG2042" },
-  "th1520": { "desc": "T-Head TH1520" },
-  "visionfive2": { "desc": "StarFive VisionFive2", "replacedby": "jh7110" },
-  "tarball": { "desc": "Tarball" },
-  "dp1000": { "desc": "UltraRISC DP1000", "replacedby": "generic" },
-  "k1-cloud": { "desc": "Spacemit K1 (Cloud)", "modified": true },
-
-  "phytiumpi": { "desc": "Phytium Pi" },
-  "q6a": { "desc": "Radxa Dragon Q6A" },
-  "a7z": { "desc": "Radxa Cubie Q6A" }
+  "riscv64": {
+    "eic7700": { "desc": "ESWIN EIC7700" },
+    "eic7700evb": { "desc": "ESWIN EIC7700 (EVB)", "replacedby": "eic7700" },
+    "generic": { "desc": "通用设备 / QEMU" },
+    "jh7110": { "desc": "StarFive JH7110" },
+    "k1": { "desc": "Spacemit K1" },
+    "lpi4a": { "desc": "LicheePi 4A", "replacedby": "th1520" },
+    "milkv-mars": { "desc": "MilkV Mars", "replacedby": "jh7110" },
+    "musebox": { "desc": "Spacemit MuseBox", "replacedby": "k1" },
+    "p1": { "desc": "Zhihe P1", "modified": true },
+    "romadc": { "desc": "DC ROMA" },
+    "rvbook": { "desc": "RuyiBook" },
+    "rvbook-zhihe": { "desc": "RuyiBook (Zhihe 款)", "modified": true },
+    "sg2042": { "desc": "Sophgo SG2042" },
+    "th1520": { "desc": "T-Head TH1520" },
+    "visionfive2": { "desc": "StarFive VisionFive2", "replacedby": "jh7110" },
+    "tarball": { "desc": "Tarball" },
+    "dp1000": { "desc": "UltraRISC DP1000", "replacedby": "generic" },
+    "k1-cloud": { "desc": "Spacemit K1 (Cloud)", "modified": true }
+  },
+  "arm64": {
+    "phytiumpi": { "desc": "Phytium Pi" },
+    "q6a": { "desc": "Radxa Dragon Q6A" },
+    "a7z": { "desc": "Radxa Cubie Q6A" },
+    "rockchip": { "desc": "Rockchip 通用镜像" }
+  }
 }

@@ -7,9 +7,61 @@
           "soc": "Phytium E2000",
           "n_cores": 4,
           "boot": "u-boot",
+          "kernels": ["6.6.y"],
           "devices": [
             {
               "device": "Phytium Pi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "core": "Qualcomm",
+      "socs": [
+        {
+          "soc": "Dragonwing QCS6490",
+          "n_cores": 8,
+          "boot": "UEFI",
+          "kernels": ["6.15.y", "6.17.y"],
+          "devices": [
+            {
+              "device": "Radxa Dragon Q6A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "core": "Rockchip",
+      "socs": [
+        {
+          "soc": "RK3588(S)",
+          "n_cores": 8,
+          "boot": "u-boot",
+          "extra": "VPU 驱动",
+          "kernels": ["6.1.y"],
+          "devices": [
+            {
+              "device": "Radxa Rock 5A"
+            },
+            {
+              "device": "Radxa Rock 5B"
+            },
+            {
+              "device": "Radxa Rock 5B+"
+            },
+            {
+              "device": "Radxa Rock 5C"
+            },
+            {
+              "device": "Radxa Rock 5T"
+            },
+            {
+              "device": "Radxa Rock 5 ITX"
+            },
+            {
+              "device": "Radxa Rock 5 ITX+"
             }
           ]
         }

@@ -8,15 +8,17 @@
       class="mb-4"
       rounded="lg"
     />
-    <ImageList :loading="loading" :items="items" />
+    <ImageList :loading="loading" :items="items" arch="riscv64" />
   </v-container>
 </template>
 
 <script setup lang="ts">
+import type { Reactive } from "vue";
 import { ref } from "vue";
+import type { ImageInfo } from "~/types/image";
 
-const items = ref([]);
-const latestitem = reactive({});
+const items: Ref<ImageInfo[]> = ref([]);
+const latestitem: Reactive<Map<string, ImageInfo>> = reactive(new Map());
 
 const loading = ref(true);
 
@@ -25,15 +27,16 @@ const dataurl =
 
 const fetchImages = async () => {
   const response = await fetch(dataurl);
-  let data = await response.json();
+  let data: ImageInfo[] = await response.json();
 
   for (const i of data) {
-    if (Object.keys(latestitem).includes(i.device)) {
-      if (i.date > latestitem[i.device].date) latestitem[i.device] = i;
-    } else latestitem[i.device] = i;
+    const j = latestitem.get(i.device);
+    if (j)
+      if (i.date > j.date) latestitem.set(i.device, i);
+      else latestitem.set(i.device, i);
   }
   data = data.map((i) => {
-    if (latestitem[i.device].date == i.date) i["tags"] = ["latest"];
+    if (latestitem.get(i.device)?.date == i.date) i["tags"] = ["latest"];
     return i;
   });
 
