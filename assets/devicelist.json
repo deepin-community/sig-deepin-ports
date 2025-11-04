@@ -9,8 +9,8 @@
     "milkv-mars": { "desc": "MilkV Mars", "replacedby": "jh7110" },
     "musebox": { "desc": "Spacemit MuseBox", "replacedby": "k1" },
     "p1": { "desc": "Zhihe P1", "modified": true },
-    "romadc": { "desc": "DC ROMA" },
-    "rvbook": { "desc": "RuyiBook" },
+    "romadc": { "desc": "DC ROMA", "replacedby": "null" },
+    "rvbook": { "desc": "RuyiBook", "replacedby": "null" },
     "rvbook-zhihe": { "desc": "RuyiBook (Zhihe 款)", "modified": true },
     "sg2042": { "desc": "Sophgo SG2042" },
     "th1520": { "desc": "T-Head TH1520" },
@@ -23,6 +23,7 @@
     "phytiumpi": { "desc": "Phytium Pi" },
     "q6a": { "desc": "Radxa Dragon Q6A" },
     "a7z": { "desc": "Radxa Cubie A7Z" },
-    "rockchip": { "desc": "Rockchip 通用镜像" }
+    "rockchip": { "desc": "Rockchip 通用镜像" },
+    "generic": { "desc": "通用设备 / QEMU" }
   }
 }

@@ -1,8 +1,8 @@
 [
   {
-    "title": "deepin RISC-V 内核构建仓库",
-    "repo": "deepin-riscv-kernel",
-    "description": "存放 deepin RISC-V 内核/U-Boot 构建脚本、patch、配置和 GitHub 工作流"
+    "title": "deepin-ports 内核构建仓库",
+    "repo": "deepin-ports-kernel",
+    "description": "存放 deepin-ports 内核/U-Boot 构建脚本、patch、配置和 GitHub 工作流"
   },
   {
     "title": "deepin 主线内核（滚动）",
@@ -48,5 +48,10 @@
     "title": "RISC-V ffmpeg",
     "repo": "ffmpeg",
     "description": "部分设备的 ffmpeg 适配版本（在 ports/ffmpeg-* 分支）"
+  },
+  {
+    "title": "deepin 仓库软件包版本一览",
+    "repo": "YukariChiba/deepin-repo-viewer",
+    "description": "浏览和查询 deepin 各仓库的各软件包版本"
   }
 ]
