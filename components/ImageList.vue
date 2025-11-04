@@ -59,7 +59,7 @@
               class="ml-2"
             >
               过时
-              <v-tooltip activator="parent" location="end"
+              <!-- <v-tooltip activator="parent" location="end"
                 >被
                 {{
                   Object.keys(devicelist[props.arch]).includes(
@@ -70,7 +70,7 @@
                     : devicelist[props.arch][item.value]?.replacedby
                 }}
                 取代</v-tooltip
-              >
+              > -->
             </v-chip>
             <v-chip
               v-if="
