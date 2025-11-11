@@ -36,7 +36,7 @@
       "core": "Rockchip",
       "socs": [
         {
-          "soc": "RK3588(S)",
+          "soc": "RK3588(S)(J)",
           "n_cores": 8,
           "boot": "u-boot",
           "extra": "VPU 驱动",
@@ -62,6 +62,43 @@
             },
             {
               "device": "Radxa Rock 5 ITX+"
+            },
+            {
+              "device": "...and more..."
+            }
+          ]
+        },
+        {
+          "soc": "RK3576(S)(J)",
+          "n_cores": 8,
+          "boot": "u-boot",
+          "extra": "VPU 驱动",
+          "kernels": ["6.1.y"],
+          "devices": [
+            {
+              "device": "Radxa Rock 4D"
+            },
+            {
+              "device": "DshanPi A1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "core": "Allwinner",
+      "socs": [
+        {
+          "soc": "Allwinner A733",
+          "n_cores": 8,
+          "boot": "u-boot",
+          "kernels": ["5.15.y"],
+          "devices": [
+            {
+              "device": "Radxa Cubie A7A"
+            },
+            {
+              "device": "Radxa Cubie A7Z"
             }
           ]
         }
