@@ -20,21 +20,21 @@ tar -xvf <你下载的镜像名称>.tar.xz
 
 解压得到
 
-- `deepin-rockchip-riscv64-25-desktop-installer.sha256sum`
+- `deepin-rockchip-arm64-25-desktop-installer.sha256sum`
   sha256 校验和
-- `deepin-rockchip-riscv64-25-desktop-installer.md5sum`
+- `deepin-rockchip-arm64-25-desktop-installer.md5sum`
   md5 校验和
-- `deepin-rockchip-riscv64-25-desktop-installer.root.ext4`
+- `deepin-rockchip-arm64-25-desktop-installer.root.ext4`
   系统根目录分区镜像
 
 校验镜像：
 
 ``` shell
-$ cat deepin-rockchip-riscv64-25-desktop-installer.sha256sum
-[hash sum]  deepin-rockchip-riscv64-25-desktop-installer.root.ext4
+$ cat deepin-rockchip-arm64-25-desktop-installer.sha256sum
+[hash sum]  deepin-rockchip-arm64-25-desktop-installer.root.ext4
 
-$ sha256sum deepin-rockchip-riscv64-25-desktop-installer.root.ext4
-[hash sum]  deepin-rockchip-riscv64-25-desktop-installer.root.ext4
+$ sha256sum deepin-rockchip-arm64-25-desktop-installer.root.ext4
+[hash sum]  deepin-rockchip-arm64-25-desktop-installer.root.ext4
 ```
 
 ## 刷写 bootloader
@@ -146,7 +146,7 @@ sudo rkdeveloptool rd
 使用分区工具创建一个空白的 gpt 分区表，新增一个分区，使用 `dd` 命令将镜像写入对应分区。
 
 ``` shell
-sudo dd if=deepin-rockchip-riscv64-25-desktop-installer.root.ext4 of=/dev/sdX1 status=progress bs=4M
+sudo dd if=deepin-rockchip-arm64-25-desktop-installer.root.ext4 of=/dev/sdX1 status=progress bs=4M
 ```
 
 ### 通过 eMMC 设备启动
@@ -155,7 +155,7 @@ sudo dd if=deepin-rockchip-riscv64-25-desktop-installer.root.ext4 of=/dev/sdX1 s
 
 ```
 # 写入 root 分区
-rkdeveloptool wl 0x40000 deepin-rockchip-riscv64-25-desktop-installer.root.ext4
+rkdeveloptool wl 0x40000 deepin-rockchip-arm64-25-desktop-installer.root.ext4
 # 重启
 sudo rkdeveloptool rd
 ```
