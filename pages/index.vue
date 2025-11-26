@@ -1,85 +1,103 @@
 <template>
   <v-container fluid class="pa-0">
-    <v-container
-      class="d-flex align-center justify-center text-center pa-6 mb-12"
+    <v-sheet
+      class="d-flex align-center justify-center text-center position-relative overflow-hidden"
+      min-height="85vh"
+      color="background"
     >
-      <v-row justify="center">
-        <v-col cols="12" md="10" lg="8">
-          <v-avatar variant="elevated" size="160" class="mb-6"
-            ><v-img src="@/assets/logo.svg"
-          /></v-avatar>
-          <h1
-            class="text-h3 text-sm-h2 font-weight-bold mb-4 text-primary"
-            style="line-height: 1.2"
-          >
-            多架构支持，由 deepin-ports 为您呈现
-          </h1>
-          <p class="text-h6 text-sm-h5 text-grey-darken-2 font-weight-regular">
-            全球知名的桌面 Linux 发行版，现已拥抱最新最热的 RISC-V
-            架构，拓展无限可能。
-          </p>
-          <div class="mt-8">
-            <v-btn-group variant="tonal" class="my-1 mx-2" divided>
+      <div class="bg-gradient position-absolute w-100 h-100"/>
+
+      <v-container class="position-relative mx-6" style="z-index: 2" max-width="1300px">
+        <v-avatar variant="elevated" size="160" class="mb-12 hidden-md-and-up"
+          ><v-img src="@/assets/logo.svg"
+        /></v-avatar>
+        <v-row justify="center" align="center">
+          <v-col cols="12" md="6" class="text-md-left text-center">
+            <h1 class="text-h3 text-lg-h2 font-weight-black mb-3 text-primary">
+              多架构支持，由
+            </h1>
+            <h1
+              class="text-h3 text-lg-h2 font-weight-black mb-6 text-secondary"
+            >
+              deepin-ports
+            </h1>
+            <h1 class="text-h3 text-lg-h2 font-weight-black mb-6 text-primary">
+              为您呈现
+            </h1>
+            <p class="text-h6 text-medium-emphasis font-weight-regular mb-8">
+              全球知名的桌面 Linux
+              发行版，现已拥抱多种最新最热架构，拓展无限可能
+            </p>
+            <div class="mt-8 justify-md-start justify-center">
+              <v-btn-group variant="tonal" class="my-1 mr-2" divided>
+                <v-btn
+                  color="primary"
+                  size="large"
+                  to="/images/arm64"
+                  prepend-icon="mdi-download-outline"
+                >
+                  ARM 镜像
+                </v-btn>
+                <v-btn
+                  color="primary"
+                  size="large"
+                  to="/images/riscv64"
+                  prepend-icon="mdi-download-outline"
+                >
+                  RISC-V 镜像
+                </v-btn>
+              </v-btn-group>
               <v-btn
-                color="primary"
+                variant="tonal"
+                color="secondary"
                 size="large"
-                to="/images/arm64"
-                prepend-icon="mdi-download-outline"
+                class="my-1 mr-1"
+                to="/matrix"
+                prepend-icon="mdi-table"
               >
-                ARM 镜像
+                设备支持矩阵
+              </v-btn>
+              <br />
+              <v-btn
+                variant="text"
+                class="my-1 mr-2"
+                color="secondary"
+                size="small"
+                href="https://deepin.org/download"
+                prepend-icon="mdi-open-in-new"
+              >
+                下载其它架构镜像
               </v-btn>
               <v-btn
-                color="primary"
-                size="large"
-                to="/images/riscv64"
-                prepend-icon="mdi-download-outline"
+                variant="text"
+                color="secondary"
+                size="small"
+                class="my-1 mx-2"
+                href="https://deepin.org"
+                prepend-icon="mdi-open-in-new"
               >
-                RISC-V 镜像
+                deepin 主页
               </v-btn>
-            </v-btn-group>
-            <v-btn
-              variant="tonal"
-              color="secondary"
-              size="large"
-              class="my-1 mx-2"
-              to="/matrix"
-              prepend-icon="mdi-table"
-            >
-              设备支持矩阵
-            </v-btn>
-            <br />
-            <v-btn
-              variant="text"
-              class="my-1 mx-2"
-              color="secondary"
-              size="small"
-              href="https://deepin.org/download"
-              prepend-icon="mdi-open-in-new"
-            >
-              下载其它架构镜像
-            </v-btn>
-            <v-btn
-              variant="text"
-              color="secondary"
-              size="small"
-              class="my-1 mx-2"
-              href="https://deepin.org"
-              prepend-icon="mdi-open-in-new"
-            >
-              deepin 主页
-            </v-btn>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6" class="d-none d-md-flex justify-center">
+            <v-img
+              src="@/assets/logo.svg"
+              max-width="400"
+              class="logo-animate"
+            />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
 
     <v-sheet
       class="d-flex align-center justify-center pa-6"
       color="grey-lighten-4"
     >
-      <v-container class="py-12">
-        <v-row justify="center">
-          <v-col cols="12" md="10" lg="8" class="text-center mb-10">
+      <v-container class="py-16">
+        <v-row>
+          <v-col cols="12" class="text-center mb-8">
             <h2 class="text-h4 font-weight-medium text-primary">
               深入 deepin-ports 的世界
             </h2>
@@ -88,54 +106,52 @@
               桌面操作系统带到更多硬件平台，构建一个开放、多元的生态系统。
             </p>
           </v-col>
-        </v-row>
-
-        <v-row>
           <v-col
-            v-for="indexlink in indexlinks"
-            :key="indexlink.title"
+            v-for="link in indexlinks"
+            :key="link.title"
             cols="12"
             sm="6"
             lg="3"
           >
             <v-card
-              variant="tonal"
-              color="primary"
-              class="fill-height d-flex flex-column"
+              class="h-100 pa-2"
               hover
+              border
+              rounded="xl"
+              variant="flat"
+              color="surface"
             >
-              <v-card-item class="pb-0">
-                <template #prepend>
-                  <v-avatar color="primary" rounded="lg" class="mr-4">
-                    <v-icon size="x-large">{{ indexlink.icon }}</v-icon>
-                  </v-avatar>
-                </template>
-                <v-card-title class="text-h5 font-weight-bold">{{
-                  indexlink.title
-                }}</v-card-title>
-                <v-card-subtitle class="text-body-1">{{
-                  indexlink.subtitle
+              <v-card-item>
+                <v-avatar
+                  color="primary"
+                  variant="tonal"
+                  rounded="lg"
+                  class="mb-4"
+                >
+                  <v-icon>{{ link.icon }}</v-icon>
+                </v-avatar>
+                <v-card-title class="pt-0">{{ link.title }}</v-card-title>
+                <v-card-subtitle class="opacity-80">{{
+                  link.subtitle
                 }}</v-card-subtitle>
               </v-card-item>
-              <v-card-text class="flex-grow-1">
-                <p class="mb-4">
-                  {{ indexlink.text }}
-                </p>
+              <v-card-text class="text-body-2 text-medium-emphasis">
+                {{ link.text }}
               </v-card-text>
-              <v-card-actions
-                v-for="action in indexlink.actions"
-                :key="action.text"
-              >
+              <v-card-actions>
                 <v-btn
-                  v-if="action.type == 'internal' || action.type == 'external'"
-                  color="primary"
+                  v-for="action in link.actions"
+                  :key="action.text"
+                  :to="action.type == 'internal' ? action.target : undefined"
+                  :href="action.type == 'external' ? action.target : undefined"
                   variant="text"
-                  :to="action.type == 'internal' ? action.target : null"
-                  :href="action.type == 'external' ? action.target : null"
-                  :append-icon="
-                    action.type == 'external' ? 'mdi-open-in-new' : null
-                  "
+                  color="primary"
                   block
+                  :append-icon="
+                    action.type == 'external'
+                      ? 'mdi-open-in-new'
+                      : 'mdi-arrow-right'
+                  "
                 >
                   {{ action.text }}
                 </v-btn>
@@ -145,6 +161,7 @@
         </v-row>
       </v-container>
     </v-sheet>
+
     <v-container class="py-12">
       <v-row align="center" justify="center">
         <v-col cols="12" md="8" class="text-center my-12">
@@ -213,8 +230,36 @@
 import indexlinks from "~/assets/indexlinks.json";
 import coopcommunities from "~/assets/coop-communities.json";
 
-useSeoMeta({
-  title: "主页",
-});
+useSeoMeta({ title: "主页" });
 definePageMeta({ title: "主页" });
 </script>
+
+<style scoped>
+.bg-gradient {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(0, 145, 201, 0.1) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(92, 107, 192, 0.1) 0%,
+      transparent 40%
+    );
+}
+.logo-animate {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+</style>

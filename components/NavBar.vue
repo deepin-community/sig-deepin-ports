@@ -4,36 +4,32 @@
       <v-avatar rounded class="mr-2">
         <v-img src="~/assets/logo.svg" />
       </v-avatar>
-      <b>deepin-ports SIG</b>
+      <b class="text-primary">deepin-ports SIG</b>
       <span class="hidden-sm-and-down">
         |
         {{ route.meta.title || route.name || "Error" }}
       </span>
     </v-app-bar-title>
     <v-spacer />
-    <v-app-bar-nav-icon
-      class="mx-2 hidden-lg-and-up"
-      variant="text"
-      @click.stop="drawer = !drawer"
-    />
     <div v-for="link in navlinks" :key="link.title" class="hidden-md-and-down">
       <v-btn
         v-if="link.type != NavType.Group"
-        rounded="lg"
+        rounded="pill"
         variant="text"
-        :active="false"
         :to="link.type == NavType.Internal ? link.target : undefined"
         :href="link.type == NavType.External ? link.target : undefined"
-        :append-icon="
-          link.type == NavType.External ? 'mdi-open-in-new' : undefined
-        "
+        :target="link.type == NavType.External ? '_blank' : undefined"
       >
         {{ link.title }}
+        <v-icon v-if="link.type == NavType.External" size="small" end
+          >mdi-open-in-new</v-icon
+        >
       </v-btn>
-      <v-btn v-else rounded="lg" variant="text">
+
+      <v-btn v-else rounded="pill" variant="text">
         {{ link.title }}<v-icon>mdi-menu-down</v-icon>
         <v-menu activator="parent" open-on-hover>
-          <v-list :lines="false" density="compact" nav>
+          <v-list :lines="false" rounded="lg" density="compact" nav>
             <template v-for="item in link.targets" :key="item.title">
               <v-list-subheader v-if="item.type == NavType.Subtitle">{{
                 item.title
@@ -55,7 +51,15 @@
         </v-menu>
       </v-btn>
     </div>
+    <v-divider vertical inset class="mx-2 hidden-md-and-down" />
+    <GlobalSearch />
+    <v-app-bar-nav-icon
+      class="hidden-lg-and-up ml-1"
+      variant="text"
+      @click.stop="drawer = !drawer"
+    />
   </v-app-bar>
+
   <v-navigation-drawer
     v-model="drawer"
     class="hidden-lg-and-up"
