@@ -13,6 +13,7 @@
     "rvbook": { "desc": "RuyiBook", "replacedby": "null" },
     "rvbook-zhihe": { "desc": "RuyiBook (Zhihe 款)", "modified": true },
     "sg2042": { "desc": "Sophgo SG2042" },
+    "sg2044": { "desc": "Sophgo SG2044" },
     "th1520": { "desc": "T-Head TH1520" },
     "visionfive2": { "desc": "StarFive VisionFive2", "replacedby": "jh7110" },
     "tarball": { "desc": "Tarball" },

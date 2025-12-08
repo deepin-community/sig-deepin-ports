@@ -199,6 +199,17 @@
               "device": "MilkV Pioneer"
             }
           ]
+        },
+        {
+          "soc": "SOPHON SG2044",
+          "n_cores": 64,
+          "boot": "linuxboot",
+          "kernels": ["6.17.y"],
+          "devices": [
+            {
+              "device": "SG2044 EVB"
+            }
+          ]
         }
       ]
     },
