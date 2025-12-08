@@ -24,6 +24,6 @@
     "q6a": { "desc": "Radxa Dragon Q6A" },
     "a733": { "desc": "A733 通用镜像" },
     "rockchip": { "desc": "Rockchip 通用镜像" },
-    "generic": { "desc": "通用设备 / QEMU" }
+    "generic": { "desc": "通用设备 / QEMU", "hidden": true }
   }
 }

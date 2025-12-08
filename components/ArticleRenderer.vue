@@ -85,10 +85,7 @@ const breadcrumbs = computed(() => {
 :deep(.markdown-body) {
   line-height: 1.8;
 }
-:deep(.markdown-body h2, code) {
-  color: rgb(var(--v-theme-primary));
-}
-:deep(.markdown-body code) {
+:deep(.markdown-body h2) {
   color: rgb(var(--v-theme-primary));
 }
 </style>

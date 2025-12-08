@@ -29,7 +29,9 @@
           v-if="
             (!devicelist[props.arch][item.value]?.replacedby ||
               show_deprecated) &&
-            (!devicelist[props.arch][item.value]?.modified || show_customized)
+            (!devicelist[props.arch][item.value]?.modified ||
+              show_customized) &&
+            !devicelist[props.arch][item.value]?.hidden
           "
         >
           <td :colspan="columns.length" @click="toggleGroup(item)">
