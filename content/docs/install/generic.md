@@ -6,14 +6,25 @@ date: 2025-01-09
 ## 支持设备
 
 - QEMU 虚拟机
+- RISC-V:
+  - UltraRISC DP1000
+  - Sophgo SG2044
 
 ## 下载 ISO 镜像
 
 选择 `通用设备 / QEMU` 下载 iso 格式的镜像至本地。
 
-## 安装 QEMU 和 RISC-V EDK2 固件
+## 实体机启动
 
-以下命令适用于 deepin 23:
+### 写入镜像
+
+参考 deepin [官方安装指南](https://www.deepin.org/zh/deepin-25-installation/)。注意：RISC-V 不可使用 Ventoy 启动。
+
+## RISC-V 虚拟机启动
+
+### 安装 QEMU 和 RISC-V EDK2 固件
+
+以下命令适用于 deepin 23/25:
 
 ```
 # 本体
@@ -24,7 +35,7 @@ sudo apt install qemu-system-modules-opengl
 sudo apt install qemu-efi-riscv64
 ```
 
-## 启动
+### 启动
 
 参考脚本：
 
@@ -59,7 +70,7 @@ qemu-system-riscv64 \
     -device virtio-vga-gl -display gtk,gl=on
 ```
 
-## 注意事项
+### 注意事项
 
 - `virtio-vga-gl` 为参考值，亦可选择 `virtio-gpu-gl`，部分硬件会导致启动卡在 openSBI
 - 启动需要大约 3-5 分钟，如需查看串口，请切换到 serial 并在 grub 界面，将 `console=tty` 改为 `console=ttyS0` 即可
