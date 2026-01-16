@@ -42,7 +42,7 @@ useSchemaOrg([
 </template>
 
 <style lang="scss">
-.mdshow * {
+.mdshow *:not(.asciinema-player-wrapper):not(.asciinema-player-wrapper *) {
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
   margin-inline-start: 0px;
