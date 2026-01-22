@@ -66,7 +66,7 @@
                 href="https://deepin.org/download"
                 prepend-icon="mdi-open-in-new"
               >
-                下载其它架构镜像
+                下载其它架构 / 通用 ISO 镜像
               </v-btn>
               <v-btn
                 variant="text"

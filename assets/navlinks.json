@@ -9,6 +9,15 @@
     "type": "group",
     "targets": [
       {
+        "title": "标准 ISO 镜像",
+        "type": "external",
+        "target": "https://www.deepin.org/download/"
+      },
+      {
+        "title": "设备定制",
+        "type": "subtitle"
+      },
+      {
         "title": "RISC-V",
         "type": "internal",
         "target": "/images/riscv64"

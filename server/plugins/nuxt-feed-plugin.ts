@@ -76,6 +76,8 @@ export async function generateFeed(feed: Feed, feedtype: string) {
     headers: {},
   });
 
+  mockEvent.$fetch = globalThis.$fetch;
+
   const posts = await queryCollection(mockEvent, feedtype)
     .order("date", "DESC")
     .limit(40)

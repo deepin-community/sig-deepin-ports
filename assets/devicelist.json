@@ -2,7 +2,7 @@
   "riscv64": {
     "eic7700": { "desc": "ESWIN EIC7700" },
     "eic7700evb": { "desc": "ESWIN EIC7700 (EVB)", "replacedby": "eic7700" },
-    "generic": { "desc": "通用设备 / QEMU" },
+    "generic": { "desc": "通用设备 / QEMU", "hidden": true },
     "jh7110": { "desc": "StarFive JH7110" },
     "k1": { "desc": "Spacemit K1" },
     "lpi4a": { "desc": "LicheePi 4A", "replacedby": "th1520" },

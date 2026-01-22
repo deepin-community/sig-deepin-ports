@@ -9,6 +9,36 @@
       class="mb-4"
       rounded="lg"
     />
+    <v-alert
+      title="社区支持声明"
+      type="info"
+      variant="tonal"
+      class="mb-4"
+      rounded="lg"
+    >
+      deepin 镜像仅提供社区级别的基本技术支持，如需定制开发，请：
+      <ul>
+        <li>
+          1. <a href="mailto:support@deepin.org">联系我们</a> 咨询 deepin
+          的商务合作。
+        </li>
+        <li>
+          2. 咨询我们的下游商业发行版「<a href="https://www.chinauos.com"
+            >统信 UOS</a
+          >」，客服热线 400-8588-488。
+        </li>
+      </ul>
+    </v-alert>
+    <v-alert
+      title="默认密码"
+      type="info"
+      variant="tonal"
+      class="mb-4"
+      rounded="lg"
+    >
+      带安装器的桌面镜像(<code>liveimage-desktop</code>)默认不创建用户，请自行通过图形界面安装器创建。root
+      用户的默认密码为 <code>deepin</code>。
+    </v-alert>
     <ImageList :loading="loading" :items="items" :arch="arch" />
   </v-container>
 </template>
