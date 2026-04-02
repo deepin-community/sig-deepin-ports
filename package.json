@@ -2,6 +2,7 @@
   "name": "sig-deepin-ports",
   "private": true,
   "type": "module",
+  "packageManager": "yarn@4.9.2",
   "scripts": {
     "build-server": "nuxt build",
     "dev": "nuxt dev",
