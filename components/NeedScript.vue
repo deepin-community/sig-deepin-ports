@@ -7,6 +7,6 @@
       type="warning"
       variant="outlined"
       class="mb-2"
-    ></v-alert>
+    />
   </noscript>
 </template>

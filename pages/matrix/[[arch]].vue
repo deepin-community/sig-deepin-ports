@@ -145,7 +145,7 @@ const route = useRoute();
 
 const getarch = () => {
   const arch =
-    typeof route.params.arch != "string"
+    typeof route.params.arch !== "string"
       ? route.params.arch[0]
       : route.params.arch;
   if (!arch) return matrix_items.riscv64;

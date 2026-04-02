@@ -4,7 +4,7 @@ const route = useRoute();
 
 definePageMeta({ title: "博客文章" });
 
-const { params } = useRoute();
+const { params } = route;
 
 const { data: article, error } = await useAsyncData(
   `blog-post-${params.blog}`,

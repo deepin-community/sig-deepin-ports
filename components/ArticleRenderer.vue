@@ -71,7 +71,7 @@ const breadcrumbs = computed(() => {
   return paths
     .map((p, index) => ({
       title: p.charAt(0).toUpperCase() + p.slice(1),
-      disabled: index !=0,
+      disabled: index !== 0,
     }))
     .filter((i) => i.title !== "Sig-deepin-ports"); // 过滤 base url
 });

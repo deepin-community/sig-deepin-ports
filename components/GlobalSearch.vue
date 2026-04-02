@@ -19,7 +19,7 @@
           @update:model-value="performSearch"
         />
       </v-card-title>
-      <v-divider/>
+      <v-divider />
       <v-card-text class="pa-0" style="height: 400px">
         <v-list v-if="results.length > 0" lines="two">
           <v-list-item
@@ -31,16 +31,23 @@
             @click="dialog = false"
           >
             <template #prepend>
-              <v-icon :icon="getIcon(item.collection)" color="primary"/>
+              <v-icon :icon="getIcon(item.collection)" color="primary" />
             </template>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
-            <v-list-item-subtitle>{{ item.description || item.path }}</v-list-item-subtitle>
+            <v-list-item-subtitle>{{
+              item.description || item.path
+            }}</v-list-item-subtitle>
             <template #append>
-               <v-chip class="ml-1" size="x-small" label>{{ getLabel(item.collection) }}</v-chip>
+              <v-chip class="ml-1" size="x-small" label>{{
+                getLabel(item.collection)
+              }}</v-chip>
             </template>
           </v-list-item>
         </v-list>
-        <div v-else-if="searchQuery" class="d-flex justify-center align-center h-100 text-grey">
+        <div
+          v-else-if="searchQuery"
+          class="d-flex justify-center align-center h-100 text-grey"
+        >
           未找到相关内容
         </div>
         <div v-else class="d-flex justify-center align-center h-100 text-grey">
@@ -52,13 +59,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
+
+type SearchResult = {
+  title: string;
+  path: string;
+  description: string;
+  collection: string;
+};
 
 const dialog = ref(false);
-const searchQuery = ref('');
-const results = ref<any[]>([]);
+const searchQuery = ref("");
+const results = ref<SearchResult[]>([]);
 
-const collections = ['blogs', 'installdocs', 'testdocs'];
+const collections = ["blogs", "installdocs", "testdocs"];
 
 const performSearch = async (val: string) => {
   if (!val || val.length < 2) {
@@ -66,13 +80,13 @@ const performSearch = async (val: string) => {
     return;
   }
 
-  const promises = collections.map(col =>
+  const promises = collections.map((col) =>
     queryCollection(col)
-      .where('title', 'LIKE', `%${val}%`)
-      .select('title', 'path', 'description')
+      .where("title", "LIKE", `%${val}%`)
+      .select("title", "path", "description")
       .limit(5)
       .all()
-      .then(items => items.map(i => ({ ...i, collection: col })))
+      .then((items) => items.map((i) => ({ ...i, collection: col }))),
   );
 
   const rawResults = await Promise.all(promises);
@@ -80,17 +94,17 @@ const performSearch = async (val: string) => {
 };
 
 const getIcon = (col: string) => {
-  if (col === 'blogs') return 'mdi-newspaper';
-  if (col.includes('test')) return 'mdi-chart-box-outline';
-  return 'mdi-file-document-outline';
+  if (col === "blogs") return "mdi-newspaper";
+  if (col.includes("test")) return "mdi-chart-box-outline";
+  return "mdi-file-document-outline";
 };
 
 const getLabel = (col: string) => {
-    const map: Record<string, string> = {
-        'blogs': '博客',
-        'installdocs': '安装文档',
-        'testdocs': '测试报告'
-    }
-    return map[col] || col;
-}
+  const map: Record<string, string> = {
+    blogs: "博客",
+    installdocs: "安装文档",
+    testdocs: "测试报告",
+  };
+  return map[col] || col;
+};
 </script>

@@ -20,6 +20,6 @@
 
 <script setup lang="ts">
 defineProps({
-  post: { type: JSON, required: true },
+  post: { type: Object, required: true },
 });
 </script>

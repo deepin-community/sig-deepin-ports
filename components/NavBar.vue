@@ -16,9 +16,9 @@
         v-if="link.type != NavType.Group"
         rounded="pill"
         variant="text"
-        :to="link.type == NavType.Internal ? link.target : undefined"
-        :href="link.type == NavType.External ? link.target : undefined"
-        :target="link.type == NavType.External ? '_blank' : undefined"
+        :to="link.type === NavType.Internal ? link.target : undefined"
+        :href="link.type === NavType.External ? link.target : undefined"
+        :target="link.type === NavType.External ? '_blank' : undefined"
       >
         {{ link.title }}
         <v-icon v-if="link.type == NavType.External" size="small" end
@@ -36,10 +36,11 @@
               }}</v-list-subheader>
               <v-list-item
                 v-if="
-                  item.type == NavType.Internal || item.type == NavType.External
+                  item.type === NavType.Internal ||
+                  item.type === NavType.External
                 "
-                :to="item.type == NavType.Internal ? item.target : undefined"
-                :href="item.type == NavType.External ? item.target : undefined"
+                :to="item.type === NavType.Internal ? item.target : undefined"
+                :href="item.type === NavType.External ? item.target : undefined"
                 :title="item.title"
               >
                 <template v-if="item.type == NavType.External" #append>
@@ -69,12 +70,12 @@
     <v-list>
       <template v-for="link in navlinks" :key="link.title">
         <v-list-item
-          v-if="link.type != NavType.Group"
+          v-if="link.type !== NavType.Group"
           :title="link.title"
-          :to="link.type == NavType.Internal ? link.target : undefined"
-          :href="link.type == NavType.External ? link.target : undefined"
+          :to="link.type === NavType.Internal ? link.target : undefined"
+          :href="link.type === NavType.External ? link.target : undefined"
           :append-icon="
-            link.type == NavType.External ? 'mdi-open-in-new' : undefined
+            link.type === NavType.External ? 'mdi-open-in-new' : undefined
           "
         />
         <v-list-group v-else>
@@ -87,13 +88,13 @@
             }}</v-list-subheader>
             <v-list-item
               v-if="
-                item.type == NavType.Internal || item.type == NavType.External
+                item.type === NavType.Internal || item.type == NavType.External
               "
-              :to="item.type == NavType.Internal ? item.target : undefined"
-              :href="item.type == NavType.External ? item.target : undefined"
+              :to="item.type === NavType.Internal ? item.target : undefined"
+              :href="item.type === NavType.External ? item.target : undefined"
               :title="item.title"
             >
-              <template v-if="item.type == NavType.External" #append>
+              <template v-if="item.type === NavType.External" #append>
                 <v-icon>mdi-open-in-new</v-icon>
               </template>
             </v-list-item>

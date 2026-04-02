@@ -5,28 +5,28 @@
       <v-container class="main-content my-6">
         <div class="d-flex flex-column align-center">
           <v-empty-state icon="$error">
-            <template v-slot:media>
-              <v-icon color="surface-variant"></v-icon>
+            <template #media>
+              <v-icon color="surface-variant" />
             </template>
 
-            <template v-slot:headline>
+            <template #headline>
               <div class="text-h4">
-                {{ error.statusCode }}
+                {{ error.status }}
               </div>
             </template>
 
-            <template v-slot:title>
+            <template #title>
               <div class="text-h6">
-                {{ error.statusMessage }}
+                {{ error.statusText }}
               </div>
             </template>
 
-            <template v-slot:text>
-              <div class="text-medium-emphasis text-caption" v-if="error.data">
+            <template #text>
+              <div v-if="error.data" class="text-medium-emphasis text-caption">
                 {{ error.data }}
               </div>
             </template>
-            <template v-slot:actions>
+            <template #actions>
               <v-btn class="mt-8" variant="outlined" to="/">Back to Home</v-btn>
             </template>
           </v-empty-state>
@@ -37,6 +37,24 @@
     <FooterBar />
   </v-app>
 </template>
+
+<script setup lang="ts">
+import type { NuxtError } from "#app";
+
+useSeoMeta({
+  title: "错误页",
+});
+
+defineProps({
+  error: {
+    type: Object as () => NuxtError,
+    default: () => ({
+      statusCode: 500,
+      statusMessage: "Internal Server Error",
+    }),
+  },
+});
+</script>
 
 <style>
 html {
@@ -52,15 +70,3 @@ a:not([class*="v"])::before {
   content: "\F0339 ";
 }
 </style>
-
-<script setup lang="ts">
-useSeoMeta({
-  title: "错误页",
-});
-
-import type { NuxtError } from "#app";
-
-const props = defineProps({
-  error: Object as () => NuxtError,
-});
-</script>

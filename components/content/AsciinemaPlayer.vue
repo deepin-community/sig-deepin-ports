@@ -1,6 +1,6 @@
 <template>
   <v-card class="asciinema-player-wrapper my-4" variant="outlined">
-    <div ref="playerContainer"></div>
+    <div ref="playerContainer" />
   </v-card>
 </template>
 

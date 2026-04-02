@@ -1,6 +1,6 @@
 <template>
   <v-fab
-    v-if="showtoc == false"
+    v-if="!showtoc"
     class="hidden-lg-and-up"
     icon="mdi-list-box-outline"
     position="sticky"
@@ -29,7 +29,7 @@
 import { useGoTo } from "vuetify";
 
 defineProps({
-  toc: { type: JSON, required: true },
+  toc: { type: Object, required: true },
 });
 
 const navto = useGoTo();

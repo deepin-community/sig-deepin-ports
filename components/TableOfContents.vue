@@ -24,7 +24,7 @@
 import { useGoTo } from "vuetify";
 
 defineProps({
-  toc: { type: JSON, required: true },
+  toc: { type: Object, required: true },
 });
 
 const navto = useGoTo();

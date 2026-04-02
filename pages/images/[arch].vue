@@ -1,7 +1,7 @@
 <template>
   <v-container class="my-6">
     <v-alert
-      v-if="arch == 'riscv64'"
+      v-if="arch === 'riscv64'"
       title="RISC-V 架构目前仍在预览（Preview）阶段"
       text="请注意，RISC-V 架构的镜像仍在预览阶段，可能存在不稳定性和不完整性。"
       type="warning"
@@ -50,7 +50,7 @@ import { fetchimglist } from "~/utils/fetch";
 const { params } = useRoute();
 
 const arch = params.arch
-  ? typeof params.arch != "string"
+  ? typeof params.arch !== "string"
     ? params.arch[0]
     : params.arch
   : undefined;
