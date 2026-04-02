@@ -5,9 +5,13 @@
       min-height="85vh"
       color="background"
     >
-      <div class="bg-gradient position-absolute w-100 h-100"/>
+      <div class="bg-gradient position-absolute w-100 h-100" />
 
-      <v-container class="position-relative mx-6" style="z-index: 2" max-width="1300px">
+      <v-container
+        class="position-relative mx-6"
+        style="z-index: 2"
+        max-width="1300px"
+      >
         <v-avatar variant="elevated" size="160" class="mb-12 hidden-md-and-up"
           ><v-img src="@/assets/logo.svg"
         /></v-avatar>
@@ -57,7 +61,7 @@
               >
                 设备支持矩阵
               </v-btn>
-              <br />
+              <br>
               <v-btn
                 variant="text"
                 class="my-1 mr-2"

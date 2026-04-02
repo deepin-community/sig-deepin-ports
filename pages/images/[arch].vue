@@ -39,7 +39,7 @@
       带安装器的桌面镜像(<code>liveimage-desktop</code>)默认不创建用户，请自行通过图形界面安装器创建。root
       用户的默认密码为 <code>deepin</code>。
     </v-alert>
-    <ImageList :loading="loading" :items="items" :arch="arch" />
+    <ImageList :loading="loading" :items="items" :arch="arch || 'x86_64'" />
   </v-container>
 </template>
 
@@ -49,7 +49,11 @@ import type { ImageInfo } from "~/types/image";
 import { fetchimglist } from "~/utils/fetch";
 const { params } = useRoute();
 
-const arch = typeof params.arch != "string" ? params.arch[0] : params.arch;
+const arch = params.arch
+  ? typeof params.arch != "string"
+    ? params.arch[0]
+    : params.arch
+  : undefined;
 
 const items: Ref<ImageInfo[]> = ref([]);
 

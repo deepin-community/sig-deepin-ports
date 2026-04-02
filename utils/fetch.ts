@@ -1,6 +1,6 @@
 import type { ImageInfo } from "~/types/image";
 
-const fetchimglist = async (arch: string) => {
+const fetchimglist = async (arch: string = "x86_64") => {
   const dataurl = `https://deepin-community.github.io/sig-deepin-ports-images/images-${arch}.json`;
   const latestitem: Map<string, ImageInfo> = new Map();
 

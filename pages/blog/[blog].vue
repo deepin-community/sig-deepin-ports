@@ -31,7 +31,7 @@ useSchemaOrg([
     headline: data.title || "Blog Post",
     description: data.description || "blog post",
     dateModified: data.date,
-    datePublished: data.date_created,
+    datePublished: data.date,
     author: [{ name: data.author }],
   },
 ]);
@@ -47,7 +47,7 @@ useSchemaOrg([
   margin-block-end: 0.5em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding: revert;
+  /* padding: revert; */
 }
 
 .mdshow {
