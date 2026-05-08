@@ -68,7 +68,7 @@ fetchImages();
 
 useSeoMeta({
   title: `镜像列表`,
-  description: "",
+  description: `deepin-ports 镜像列表，提供各个架构的镜像。`,
 });
 definePageMeta({ title: `镜像列表` });
 </script>

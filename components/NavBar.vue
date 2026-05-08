@@ -110,7 +110,7 @@ import navlinks_json from "~/assets/navlinks.json";
 import type { Nav } from "~/types/nav";
 import { NavType } from "~/types/nav";
 
-const navlinks: Nav = navlinks_json;
+const navlinks = navlinks_json as unknown as Nav;
 
 const route = useRoute();
 

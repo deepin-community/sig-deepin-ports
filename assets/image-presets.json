@@ -1,0 +1,94 @@
+{
+  "efi_root": {
+    "title": "标准 EFI 引导 (efi + root)",
+    "devices": ["generic", "q6a", "cix-p1"],
+    "data": {
+      "table": "gpt",
+      "sector": 512,
+      "partitions": [
+        {
+          "id": "efi",
+          "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
+          "size": 67108864
+        },
+        {
+          "id": "root",
+          "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4"
+        }
+      ]
+    }
+  },
+  "efi_root_4kn": {
+    "title": "标准 EFI 引导 (efi + root) (4Kn 设备)",
+    "devices": ["generic", "q6a"],
+    "data": {
+      "table": "gpt",
+      "sector": 4096,
+      "partitions": [
+        {
+          "id": "efi",
+          "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
+          "size": 67108864
+        },
+        {
+          "id": "root",
+          "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4"
+        }
+      ]
+    }
+  },
+  "efi_boot_root": {
+    "title": "标准 EFI 引导 (efi + boot + root)",
+    "devices": ["generic"],
+    "data": {
+      "table": "gpt",
+      "sector": 512,
+      "partitions": [
+        {
+          "id": "efi",
+          "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
+          "size": 67108864
+        },
+        {
+          "id": "boot",
+          "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4"
+        },
+        {
+          "id": "root",
+          "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4"
+        }
+      ]
+    }
+  },
+  "riscv_uboot": {
+    "title": "RISC-V U-Boot 引导",
+    "devices": ["jh7110"],
+    "data": {
+      "table": "gpt",
+      "sector": 512,
+      "partitions": [
+        {
+          "id": "spl",
+          "type": "2E54B353-1271-4842-806F-E436D6AF6985",
+          "size": 2097152,
+          "offset": 2097152
+        },
+        {
+          "id": "uboot",
+          "type": "5B193300-FC78-40CD-8002-E86C45580B47",
+          "size": 4194304,
+          "offset": 4194304
+        },
+        {
+          "id": "boot",
+          "type": "EBD0A0A2-B9E5-4433-87C0-68B6B72699C7",
+          "offset": 8388608
+        },
+        {
+          "id": "root",
+          "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4"
+        }
+      ]
+    }
+  }
+}

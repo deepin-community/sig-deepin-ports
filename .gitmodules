@@ -1,0 +1,3 @@
+[submodule "wasm-imager"]
+	path = wasm-imager
+	url = https://github.com/YukariChiba/wasm-imager.git

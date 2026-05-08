@@ -4692,6 +4692,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/file-size@npm:^1":
+  version: 1.0.3
+  resolution: "@types/file-size@npm:1.0.3"
+  checksum: 10c0/57f1c170052d66a1617bc7bbd83c38e35f259fd776fdac4cb874b12335d079b0cd6ddb1a67b224fe258f2d78bd22ab016557fa86fc26b882fe12f6f9d2911d7a
+  languageName: node
+  linkType: hard
+
 "@types/hast@npm:^3.0.0, @types/hast@npm:^3.0.4":
   version: 3.0.4
   resolution: "@types/hast@npm:3.0.4"
@@ -8557,6 +8564,13 @@ __metadata:
   dependencies:
     flat-cache: "npm:^4.0.0"
   checksum: 10c0/9e2b5938b1cd9b6d7e3612bdc533afd4ac17b2fc646569e9a8abbf2eb48e5eb8e316bc38815a3ef6a1b456f4107f0d0f055a614ca613e75db6bf9ff4d72c1638
+  languageName: node
+  linkType: hard
+
+"file-size@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "file-size@npm:1.0.0"
+  checksum: 10c0/31700ae86ec425e60021392197d3dd5579e265fb614335f53e29a975e3e92fa73d982bd6a4be05e324b432ae1befa078c7332415a91154f63e766c13c966571f
   languageName: node
   linkType: hard
 
@@ -14636,11 +14650,13 @@ __metadata:
     "@nuxt/eslint": "npm:^1.15.2"
     "@nuxtjs/google-fonts": "npm:^3.2.0"
     "@nuxtjs/sitemap": "npm:^8.0.11"
+    "@types/file-size": "npm:^1"
     "@types/node": "npm:^25.5.0"
     asciinema-player: "npm:^3.15.1"
     axios: "npm:^1.14.0"
     better-sqlite3: "npm:^12.8.0"
     eslint: "npm:^10.1.0"
+    file-size: "npm:^1.0.0"
     github-markdown-css: "npm:^5.9.0"
     moment: "npm:^2.30.1"
     nuxt: "npm:^4.4.2"
@@ -14653,6 +14669,7 @@ __metadata:
     vite-plugin-vuetify: "npm:^2.1.3"
     vue: "npm:3.5.30"
     vuetify: "npm:^3.12.4"
+    wasm-imager: "link:./wasm-imager/pkg"
   languageName: unknown
   linkType: soft
 
@@ -16779,6 +16796,12 @@ __metadata:
   checksum: 10c0/37cf335c90efff31672ebb345577d681e2177f7ff9006a9ad47c68c5a9d265ba4a7b39d6c2599ceea639ca9315584ce4bd9c9fbf7a7217bfb7a599e71943c4c4
   languageName: node
   linkType: hard
+
+"wasm-imager@link:./wasm-imager/pkg::locator=sig-deepin-ports%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "wasm-imager@link:./wasm-imager/pkg::locator=sig-deepin-ports%40workspace%3A."
+  languageName: node
+  linkType: soft
 
 "web-namespaces@npm:^2.0.0":
   version: 2.0.1

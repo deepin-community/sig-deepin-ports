@@ -11,6 +11,8 @@
 </template>
 
 <style>
+@import 'vuetify/styles';
+
 html {
   overflow-y: auto !important;
 }

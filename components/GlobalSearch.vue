@@ -59,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Collections } from "@nuxt/content";
 import { ref } from "vue";
 
 type SearchResult = {
@@ -72,7 +73,7 @@ const dialog = ref(false);
 const searchQuery = ref("");
 const results = ref<SearchResult[]>([]);
 
-const collections = ["blogs", "installdocs", "testdocs"];
+const collections: (keyof Collections)[] = ["blogs", "installdocs", "testdocs"];
 
 const performSearch = async (val: string) => {
   if (!val || val.length < 2) {

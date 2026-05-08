@@ -75,7 +75,7 @@ const projectsToDisplay: Project[] = projects_json;
 
 useSeoMeta({
   title: "项目列表",
-  description: "",
+  description: "deepin-ports SIG 的项目列表，展示了我们正在维护的项目。",
 });
 definePageMeta({ title: "项目列表" });
 </script>

@@ -38,7 +38,7 @@ useSchemaOrg([
 </script>
 
 <template>
-  <ArticleRenderer :article="article" />
+  <ArticleRenderer :article="article || {}" />
 </template>
 
 <style lang="scss">

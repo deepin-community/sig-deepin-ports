@@ -30,7 +30,7 @@ const totalPage = computed(() => {
 
 useSeoMeta({
   title: "博客",
-  description: "",
+  description: "deepin-ports SIG 的博客和文档，均支持 RSS 订阅，欢迎使用！",
 });
 definePageMeta({ title: "博客" });
 </script>

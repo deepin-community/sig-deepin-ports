@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - run: corepack enable
       - name: Set Node.js
         uses: actions/setup-node@v4
@@ -28,6 +30,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
+      - name: Build wasm-imager
+        run: |
+          cargo install wasm-pack && cd wasm-imager && wasm-pack build --target web
       - name: Build
         run: |
           yarn && yarn build --preset github_pages

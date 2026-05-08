@@ -26,6 +26,15 @@
         "title": "ARM",
         "type": "internal",
         "target": "/images/arm64"
+      },
+      {
+        "title": "镜像工具",
+        "type": "subtitle"
+      },
+      {
+        "title": "镜像生成器 (Beta)",
+        "type": "internal",
+        "target": "/images/generator"
       }
     ]
   },
