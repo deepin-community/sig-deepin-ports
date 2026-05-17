@@ -214,10 +214,51 @@ Starting kernel ...
 
 因此，手工修补 `bootfs/rootfs` 后虽然已经能够进入 `3.2 内核启动`，但仍未完成 `3.4 systemd 启动`，不能视为原始镜像测试通过。
 
+### 附加排障记录：最后一次进一步尝试
+
+在上述二次修补基础上，又进行了最后一次进一步尝试，目标是验证问题是否可以通过最小化本地绕过方式规避：
+
+- 在 `rootfs` 中补入 `/init -> /sbin/init`，以对应当前内核命令行中的 `rdinit=/init`
+- 修改 `bootfs` 中的 `spacemit/6.6.63-k1-spacemit-66y/k1-x_MUSE-Pi-Pro.dtb`，尝试将 `rcpu_rproc@0` 节点标记为 `disabled`
+
+本次尝试对应的完整串口日志保存在：
+
+`/Users/karanocave/serial-2026-05-17-205311.log`
+
+串口日志确认，设备仍然能够从 SD 卡进入 Linux 内核：
+
+```text
+[   1.936] Try to boot from mmc0 ...
+[   2.057] Loading kernel...
+[   2.657] Loading dtb...
+Starting kernel ...
+```
+
+但启动结果并未改善。即使进行了上述进一步修补，日志中仍然出现：
+
+- `remoteproc remoteproc0: rcpu_rproc is available`
+- `Direct firmware load for esos.elf failed with error -2`
+- `spacemit-rproc: probe of c088c000.rcpu_rproc failed with error -22`
+- 随后的多次 `kernfs` warning、`refcount_t: underflow; use-after-free`
+- 最终再次进入 `rcu_preempt detected stalls on CPUs/tasks`
+
+关键日志片段：
+
+```text
+[    2.762509] remoteproc remoteproc0: rcpu_rproc is available
+[    2.774063] remoteproc remoteproc0: Direct firmware load for esos.elf failed with error -2
+[    2.813303] spacemit-rproc c088c000.rcpu_rproc: rproc_boot failed
+[    2.891313] spacemit-rproc: probe of c088c000.rcpu_rproc failed with error -22
+[    3.204243] refcount_t: underflow; use-after-free.
+[   27.255227] rcu: INFO: rcu_preempt detected stalls on CPUs/tasks:
+```
+
+这说明本地进一步尝试并未改变实际运行结果：失败点仍然位于 `spacemit-rproc` / `esos.elf` 相关的内核早期初始化阶段，系统依然未进入 `systemd` 或登录界面。至此，本次测试侧的排障可以结束，后续需要由镜像或内核维护方继续定位。
+
 ### 结论
 
 **支持等级：1 仅可安装，无法启动**
 
 该镜像在 SpacemiT MUSE Pi Pro 上未通过测试。
 
-> 本次测试确认：原始镜像的首要失败点位于 `bootfs` 内容与 U-Boot 默认引导约定不匹配，导致系统停在 bootloader 阶段。进一步手工修补后，设备已经能够进入 Linux 内核，但仍会在内核早期阶段因 `spacemit-rproc` / `esos.elf` 缺失、`refcount` 异常和 RCU stall 而无法继续启动至 `systemd`。因此原始发布镜像仍应判定为未通过测试。
+> 本次测试确认：原始镜像的首要失败点位于 `bootfs` 内容与 U-Boot 默认引导约定不匹配，导致系统停在 bootloader 阶段。进一步手工修补后，设备已经能够进入 Linux 内核，但仍会在内核早期阶段因 `spacemit-rproc` / `esos.elf` 缺失、`refcount` 异常和 RCU stall 而无法继续启动至 `systemd`。即使补充 `/init` 并尝试在 DTB 中禁用 `rcpu_rproc`，最终结果仍未改善。因此原始发布镜像仍应判定为未通过测试。
