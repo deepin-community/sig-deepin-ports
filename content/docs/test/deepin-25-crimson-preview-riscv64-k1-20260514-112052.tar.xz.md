@@ -163,10 +163,61 @@ Bad Linux RISCV Image magic!
 - `initramfs-generic.img`
 - `k1-x_MUSE-Pi-Pro.dtb`
 
+### 附加排障记录：手工修补 SD 卡后的二次启动结果
+
+为确认问题边界，本次测试额外对 SD 卡内容进行了手工修补：
+
+- 保持前述 `bootinfo`、`FSBL`、`OpenSBI`、`U-Boot` 与 GPT 分区布局不变
+- 重建 `bootfs`，补入：
+  - `vmlinuz-6.6.63-k1-spacemit-66y`
+  - `spacemit/6.6.63-k1-spacemit-66y/k1-x_MUSE-Pi-Pro.dtb`
+  - 指向上述文件的 `env_k1-x.txt`
+- 向 `rootfs` 补入 `/usr/lib/modules/6.6.63-k1-spacemit-66y`
+
+修补后的完整串口日志保存在：
+
+`/Users/karanocave/serial-2026-05-17-201601.log`
+
+修补后，U-Boot 已能够从 `bootfs` 成功加载内核和 DTB，并开始启动 Linux 内核：
+
+```text
+[   1.917] load env_k1-x.txt from bootfs successful
+[   2.045] match dtb by product_name: spacemit/6.6.63-k1-spacemit-66y/k1-x_MUSE-Pi-Pro.dtb
+[   2.060] Loading kernel...
+[   2.613] 36731392 bytes read in 511 ms (68.6 MiB/s)
+[   2.615] Loading dtb...
+[   2.656] 87773 bytes read in 19 ms (4.4 MiB/s)
+Starting kernel ...
+[    0.000000] Linux version 6.6.63-k1-spacemit-66y ...
+```
+
+这说明前述原始镜像中的首要问题确实位于 `bootfs` 内容不完整，而不是 SD 启动布局本身。
+
+但修补后系统仍未完成启动，新的失败点已经前移到内核早期初始化阶段。串口日志显示：
+
+- 仍未找到 `initrd.img-6.6.63-k1-spacemit-66y`
+- `spacemit-rproc` 反复因 `esos.elf` 缺失而启动失败
+- 随后出现多次 `kernfs` warning 与 `refcount_t: underflow; use-after-free`
+- 最终出现 `rcu_preempt detected stalls on CPUs/tasks`
+- 日志中未出现 `systemd[1]`、登录提示符或图形界面启动信息
+
+关键日志片段：
+
+```text
+[   2.683] Failed to load 'initrd.img-6.6.63-k1-spacemit-66y'
+[   2.685] load ramdisk from bootfs fail, use built-in ramdisk
+[    2.816148] remoteproc remoteproc0: Direct firmware load for esos.elf failed with error -2
+[    2.869792] spacemit-rproc c088c000.rcpu_rproc: rproc_boot failed
+[    3.275981] refcount_t: underflow; use-after-free.
+[   25.042161] rcu: INFO: rcu_preempt detected stalls on CPUs/tasks:
+```
+
+因此，手工修补 `bootfs/rootfs` 后虽然已经能够进入 `3.2 内核启动`，但仍未完成 `3.4 systemd 启动`，不能视为原始镜像测试通过。
+
 ### 结论
 
 **支持等级：1 仅可安装，无法启动**
 
 该镜像在 SpacemiT MUSE Pi Pro 上未通过测试。
 
-> 本次测试确认：SD 卡上的 bootloader 分区布局已经可以正常从 SD 启动并进入 U-Boot，问题不再位于 `bootinfo`、`FSBL`、`OpenSBI`、`U-Boot` 或 GPT 布局本身。失败点位于 `bootfs` 内容与 U-Boot 默认引导约定不匹配，导致 U-Boot 无法找到 `Image.itb`、设备树和 initramfs，最终未能启动内核。
+> 本次测试确认：原始镜像的首要失败点位于 `bootfs` 内容与 U-Boot 默认引导约定不匹配，导致系统停在 bootloader 阶段。进一步手工修补后，设备已经能够进入 Linux 内核，但仍会在内核早期阶段因 `spacemit-rproc` / `esos.elf` 缺失、`refcount` 异常和 RCU stall 而无法继续启动至 `systemd`。因此原始发布镜像仍应判定为未通过测试。
