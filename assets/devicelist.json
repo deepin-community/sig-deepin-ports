@@ -5,6 +5,7 @@
     "generic": { "desc": "通用设备 / QEMU", "hidden": true },
     "jh7110": { "desc": "StarFive JH7110" },
     "k1": { "desc": "Spacemit K1" },
+    "k3": { "desc": "Spacemit K3" },
     "lpi4a": { "desc": "LicheePi 4A", "replacedby": "th1520" },
     "milkv-mars": { "desc": "MilkV Mars", "replacedby": "jh7110" },
     "musebox": { "desc": "Spacemit MuseBox", "replacedby": "k1" },

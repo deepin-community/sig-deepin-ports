@@ -23,10 +23,21 @@
           "soc": "Dragonwing QCS6490",
           "n_cores": 8,
           "boot": "UEFI",
-          "kernels": ["6.15.y", "6.17.y"],
+          "kernels": ["7.0.y"],
           "devices": [
             {
               "device": "Radxa Dragon Q6A"
+            }
+          ]
+        },
+        {
+          "soc": "Snapdragon SC8280XP",
+          "n_cores": 8,
+          "boot": "UEFI",
+          "kernels": ["7.0.y"],
+          "devices": [
+            {
+              "device": "Radxa Dragon Q8B"
             }
           ]
         }
