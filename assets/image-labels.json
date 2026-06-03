@@ -18,6 +18,10 @@
       "title": "25 预览版",
       "color": "success"
     },
+    "next-preview": {
+      "title": "Next 预览版 (不稳定)",
+      "color": "warning"
+    },
     "25-crimson-immutable": {
       "title": "25 预览版 (磐石)",
       "color": "success"
