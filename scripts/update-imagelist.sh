@@ -31,17 +31,20 @@ function process() {
   fsize=$2
   case $fname in
     *.iso)
-      # deepin-23-beige-preview-riscv64-20250107-145422 
+      # deepin-23-beige-preview-riscv64-20250107-145422.iso
+      # deepin-23.1-beige-preview-arm64-20250107-145422.iso
+      fbase=${fname%.iso}
       process_arg \
         $(echo $fname | cut -f 2,3,4 -d '-') \
-	$(echo $fname | cut -f 1 -d '.' | rev | cut -f 1,2 -d '-' | rev)
+	$(echo $fbase | rev | cut -f 1,2 -d '-' | rev)
       ;;
     *.tar.xz | *.tar.gz)
-      # deepin-23-beige-preview-riscv64-th1520-20241227-161022
+      # deepin-23-beige-preview-riscv64-th1520-20241227-161022.tar.xz
+      fbase=${fname%.tar.*}
       process_arg \
         $(echo $fname | cut -f 2,3,4 -d '-') \
-	$(echo $fname | cut -f 1 -d '.' | rev | cut -f 1,2 -d '-' | rev) \
-	$(echo $fname | cut -f 1 -d '.' | rev | cut -f 3- -d '-' | rev | cut -f 6- -d '-') \
+	$(echo $fbase | rev | cut -f 1,2 -d '-' | rev) \
+	$(echo $fbase | rev | cut -f 3- -d '-' | rev | cut -f 6- -d '-') \
       ;;
     *)
       ;;
