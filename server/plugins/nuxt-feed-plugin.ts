@@ -40,7 +40,10 @@ const options_base = {
 };
 
 export async function generateFeed(feed: Feed, feedtype: string) {
-  const options = options_base;
+  const options = {
+    ...options_base,
+    feedLinks: { ...options_base.feedLinks },
+  };
   let prefix = "";
   switch (feedtype) {
     case "blogs": {
